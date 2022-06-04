@@ -274,25 +274,15 @@
 
 
    <div id="itinerary">
-       
-      
-      <div id="itineraryAlerts" class="group">
-         <div class="fr">
-            <input type="button" class="but mSprite" onclick="window.print(); return false;" name="printrec" value="Imprimir">
-         </div>
-         
-                         <div class="group">
-	                    <h3 class="nm info"> <img src="./Itinerario para Localizador 20464090_files/1px.gif" class="infoIcon mSprite">&nbsp;
-		                  Reserva ahora y paga después
-	                   </h3>  
-                     </div>
-                   
-         
-      </div>
-      
-
-     
-      <div class="printable">
+     <div id="itineraryAlerts" class="group">
+       <div class="fr">
+         <input type="button" class="but mSprite" onclick="window.print(); return false;" name="printrec" value="Imprimir" />
+       </div>
+       <div class="ok">
+         <h3 class="nm"> Este itinerario está pagado y confirmado. ¡Buen viaje!</h3>
+       </div>
+     </div>
+     <div class="printable">
          <h2>
             Itinerario de viaje</h2>
       </div>
@@ -300,65 +290,8 @@
       <table id="items" width="100%">
          
           <tbody><tr class="item">
-            <td class="itemImage">
-               <img src="./Itinerario para Localizador 20464090_files/quote.gif" alt="">
-            </td>
-            <td class="itemData">
-                <div class="group itemHdr">
-                  <h3>
-                     Instrucciones de pago
-                     
-                  </h3>
-               </div>
-               
-                    <div class="group" id="payQuote">
-                       
-                             <div class="stats fl">
-                                <h3>
-                                   Importe a pagar:</h3>
-                                <p>
-                                   $
-                                   51,433.20 MXN</p>
-                             </div>
-                          
-                       <div class="stats fl">
-                          <h3>
-                             Paga antes de:</h3>
-                          <p>
-                             sab, 4 jun 2022, 13:00 Hrs
-                             
-                          </p>
-                       </div>
-                    </div>
-                
-
-        <div class="well">
-            <h3>
-                <span class="ptw-icon-laptop large-icon"></span>
-                Pago en linea
-            </h3>
-            <div class="group">
-                <div class="fl">
-                  <form action="https://www.hotelxcaretmex.com/Orden%20de%20pago%20Localizador%20de%20tu%20reservaci%C3%B3n%2020464090.pdf" method="post" target="_blank">
-                     <input type="hidden" name="keyValidation" value="4641b553-25f6-4270-b93f-eb55c88f3812">
-                     <input type="hidden" name="masterLocatorId" value="20464090">
-                     <button type="submit" value="Pagar reservación" class="btn btn-primary btn-large no-print">Pagar reservación</button>
-                  </form>
-                </div>
-                <div class="fl">
-                    <h3>Aceptamos todas las tarjetas de crédito</h3>
-                        <h4>Paga hasta en 18 meses sin intereses </h4>
-                    <p class="no-print">
-                        <a id="paymentOptionsLink" href="https://www.pricetravel.com.mx/info/metodos-pagos" class="box ap_colorbox_simple cboxElement" style="text-decoration:none;">
-                            <img src="./Itinerario para Localizador 20464090_files/1px.gif" alt="" class="bank2 spriteBank" title="American Express"><img src="./Itinerario para Localizador 20464090_files/1px.gif" alt="" class="bank3 spriteBank" title="Banamex"><img src="./Itinerario para Localizador 20464090_files/1px.gif" alt="" class="bank4 spriteBank" title="Santander"><img src="./Itinerario para Localizador 20464090_files/1px.gif" alt="" class="bank5 spriteBank" title="HSBC"><img src="./Itinerario para Localizador 20464090_files/1px.gif" alt="" class="bank6 spriteBank" title="Banorte"><img src="./Itinerario para Localizador 20464090_files/1px.gif" alt="" class="bank7 spriteBank" title="Scotiabank Inverlat"><img src="./Itinerario para Localizador 20464090_files/1px.gif" alt="" class="bank8 spriteBank" title="Bancomer"><img src="./Itinerario para Localizador 20464090_files/1px.gif" alt="" class="bank9 spriteBank" title="IXE"><img src="./Itinerario para Localizador 20464090_files/1px.gif" alt="" class="bank10 spriteBank" title="Inbursa"><img src="./Itinerario para Localizador 20464090_files/1px.gif" alt="" class="bank11 spriteBank" title="Banco del Bajio">
-                            &nbsp;Detalles<img src="./Itinerario para Localizador 20464090_files/1px.gif" class="pointR mSprite">
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-            </td>
+            <td class="itemImage">&nbsp;</td>
+            <td class="itemData">&nbsp;</td>
          </tr> 
 
                   
@@ -406,14 +339,12 @@
    <div class="provData">
       <ul>
          <li>Carr Federal Chetumal-Puerto Juárez km 282, Playa del Carmen, Quintana Roo, México</li>
-         <li><b>Teléfono:&nbsp;</b> 52 (998) 881-9836
-         <b>Fax:&nbsp;</b>52 (984) 871-5200</li>
+         <li><b>Teléfono:&nbsp;</b> 800 266 0303
+         <b>Fax:&nbsp;</b>52 (984) 151-5200</li>
       </ul>
    </div>
 </div>
-
-<b class="red">Comprobante no válido para reclamar el servicio descrito</b>
-
+<b class="alert-success">Comprobante valido para reclamar servicios descritos.</b>
 <table class="itemDesc">
    <tbody><tr class="title">
       <th>Estancia</th>
@@ -632,7 +563,7 @@
                   </td>
                   <td class="lastcol right">
                       
-                        <span class="fl">$</span>0.00
+                        <span class="fl">$</span>51,433.20
                       
                   </td>
                </tr>
@@ -642,7 +573,7 @@
                      Saldo&nbsp;MXN:
                   </td>
                   <td class="lastcol right">
-                     <span class="fl">$</span>51,433.20
+                     <span class="fl">$</span>0.00
                   </td>
                </tr>
             </tbody></table>
@@ -658,7 +589,9 @@
          <div id="historyHidden" class="nojavascript" style="display: block;">
             
                <h3>Pagos</h3>
-                   <table class="list" cellspacing="0" cellpadding="0" width="100%"><tbody><tr class="nb"><td colspan="5"><h3></h3></td></tr><tr class="title"><th>Fecha</th><th>Forma de pago</th><th>No. Pago</th><th>Monto cobrado</th><th>Importe</th></tr><tr><td colspan="5" class="ct"> <span class="light">Cotización en espera de pago.</span></td></tr><tr class="tt"><td colspan="4" class="right"><strong>Pagado MXN:</strong></td><td class="right"><span class="floatleft">$</span> <strong>0.00</strong></td></tr></tbody></table>
+                   <table class="list" cellspacing="0" cellpadding="0" width="100%"><tbody><tr class="nb"><td colspan="5"><h3></h3></td></tr><tr class="title"><th>Fecha</th><th>Forma de pago</th><th>No. Pago</th><th>Monto cobrado</th><th>Importe</th></tr><tr>
+                     <td colspan="5" class="ct"> <span class="light">Cotización pagada.</span></td></tr><tr class="tt"><td colspan="4" class="right"><strong>Pagado MXN:</strong></td>
+                   <td class="right"><span class="floatleft">$</span> <strong>51,433.20</strong></td></tr></tbody></table>
             
          </div>
       </div>
