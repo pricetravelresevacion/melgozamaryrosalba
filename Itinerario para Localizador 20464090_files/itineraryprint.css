@@ -1,0 +1,79 @@
+/* Hoja compartida de estilos de impresión para itinerario del cliente. Se carga en todos los casos: PriceTravel y afiliados  */
+/* Force screen colors for webkit browsers */
+
+/* Globals */
+
+body *{page-break-inside: auto;}
+#banner{display:none !important;}
+#Content {float:none;}
+#privacyMessage h2 {font-size:12px; font-weight:bold;}
+#privacyMessage, .field-name {font-size:10px; font-weight:normal;}
+.printHidden, #avisoPriv a.toggle, #itineraryAlerts .info {display:none;}
+tr.title th {text-shadow:none;}
+
+/* Imprimir recibo de pago 
+#historyHidden {display:block !important;}
+#policyCollapse{display:block !important;}
+td#tktLeft {vertical-align:top; padding:1em 0 0 0;}
+*/
+
+/* Page breaks  */
+.totalswrap {page-break-inside:avoid;} 
+div.busTkt {page-break-inside:avoid;} 
+.tktWrapper{page-break-before:always;} 
+#historyHidden, #avisoPriv, .printable-document {page-break-before:always;}
+
+#avisoPriv {page-break-before:always; margin:0;}
+.provider-voucher{page-break-after: always; page-break-inside: avoid;}
+
+#privacyMessage{display: block !important; page-break-before:always;}
+
+.printable-document .field-wrapper {
+	border:1px solid #ccc;
+	padding:3px 6px;
+}
+
+.printable-document .field-wrapper>h4 {
+	margin:0 0 3px 0;
+}
+
+.printable-document .text-medium {
+	font-size:12px;
+}
+
+.no-print
+{
+	display: none !important;
+}
+
+.text-small {font-size:8px;}
+
+#senda-ticket .field-wrapper {border:none;}
+.text-compressed {line-height: 130%;}
+ol {margin-left:2em;}
+
+/* Autobuses */
+#tktIda {margin:1em 0 0 0;}
+.cuponPax  {width:33%;}
+.cuponOperador  {width:62%;}
+.busTkt {border:1px solid #000; padding:3px 10px; margin:5px 0;}
+.tktWrapper h4 {margin:0;}
+.cuponPax td, .cuponOperador td , .cuponPax th, .cuponOperador th {  padding: 0 5px 3px 0;}
+.legalText { border-top: 1px dotted #999;}
+.slats > li ol {margin:12px 0 24px 84px;}
+.ticket-validator {width:80px;}
+#senda-ticket {width:700px; margin:0 auto; position:relative; top:20px; padding:.5em; font-family:verdana, sans-serif !important;}
+#senda-ticket .field-name {color:#5b5b5b !important; font-weight:bold;}
+#senda-ticket div[class*="span"] h4 {margin:.75em 0 .25em 0;}
+.senda-header h2, .ticket-number .bg-gray {color:#ad2142;}
+#senda-ticket .title th, #senda-ticket .list td  {border:none;}
+.ticket-number ul .text-medium, .ticket-number ul {font-size:10px; padding:0;}
+#senda-ticket .senda-colors {color:#ad2142; font-size:12px; margin-bottom:0;}
+.textura-folio {max-width:210px;}
+ #ticket-header li.folio {padding:.25em; background:#fff; margin:4px;}   
+.senda-colors {color:#ad2142 !important;}
+#bolivarianoTicket .ticket{ margin: 0;}
+#bolivarianoTicket .condiciones{width: 270px; margin-left: 10px;}
+
+
+

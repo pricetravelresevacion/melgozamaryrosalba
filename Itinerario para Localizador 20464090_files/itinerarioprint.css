@@ -1,0 +1,100 @@
+﻿@charset "utf-8";
+/* CSS Impresión itinerarios */
+
+
+
+/* Globales */
+#banner, #header, #left, #helpleft, .reslinks, #footer, .ok, .but, #secTitle p.fr, 
+.itemrate, .totalswrap, #secTitle h2, .screenIcon, div p.smallv.padding, p.light, .cuponOperador th br, #busPoliciesToggler{display:none;}
+#showHistory {display:none !important;}
+body *{page-break-inside: auto;}
+body {background:white; color:#000; font:8pt/9.6pt 'Arial','Verdana', sans-serif; line-height:130%; margin:0; padding:0;} 
+@media print and (color) {
+   * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+   }
+}
+#container2 {margin:0;}
+@page {margin:auto;}
+table {border-collapse:collapse; border-spacing:0;}
+#Content {width:auto;}
+#itinerary {width:auto; box-shadow:none;}
+.printable {display:block;}
+.printable img {max-width:360px;}
+#secTitle img {padding:0 1em 0 0; vertical-align:middle;} 
+#secTitle .fl {width:100%;}
+th {text-align:left;}
+/* Márgenes */
+
+h2, h3, h4, h5, h6 {margin:1.25em 0 .25em 0;}
+dl, p {margin:.5em 0 1.25em 0;}
+ul, ol {margin:.5em 0 1.5em 1.5em;}
+table h2, table h3, table h4, table h5, table h6 {margin:0;}
+h1, h2, h3 {font-family:Arial, sans-serif;}
+ul {list-style-type:none; line-height:180%; margin:0; padding:0;}
+ul, ol, table ul, table ol {margin:.25em 0 .5em 1em;}
+.col1 h4 {margin:.15em 0 .5em 0;}
+.col1 p {margin:0 0 .25em 0;}
+.itemHdr h3 {margin:0 0 .5em 0; font-size:16px; color:#000; font-weight:bold;}
+table h4, h4 {font-family:arial, sans-serif; margin:.75em 0 .25em 0;}
+.prom {font-weight:bold; color:#000;}
+.confirm, td.passengers {color:#000;}
+.tiny {font-size:6.5pt;}
+
+.fl {float:left;}
+.fr {float:right;}
+.clear {clear:both;}
+.nm {margin:0;}
+.right {text-align:right;}
+.iln li {display:inline; margin:0 1em 0 0;}
+ul.nm {line-height:120%;}
+
+/* Vuelos */
+caption {text-align:left;}
+
+/* Ajuste de estilos de pantalla */
+tr.title th {border-left:none; border-right:none; border-top:1px solid #aaa; border-bottom:1px solid #aaa; -moz-box-shadow:none; -webkit-box-shadow:none; font-weight:normal; padding:.2em 1em .2em .25em; font-size:7pt;}
+td.itemImage {border-top:2px solid #999; vertical-align:top; padding:1em .5em 1em 0;}
+td.itemData  {border-top:2px solid #999; padding:1em 0 .5em .5em;}
+tr.roomData td {border-bottom:none;}
+.itemrate {margin:0 0 -7.5pt 0; padding:.5em; border-top:2px solid #999; border-left:2px solid #999; border-right:2px solid #999;}
+.grouper h2 {font-weight:normal;}
+#ucFlight_tblFlights tr.banNom td {border-top:1px solid #000; padding:3px 0;}
+#items {border-bottom:none;}
+.cuponOperador  { border-left:1px dashed #000;}
+.cuponOperador li {line-height:120%;}
+#ucFlight_tblFlights td.higLit {font-weight:bold;}
+
+/* Self clearing floats and IE float fixes */
+/* self-clear floats */
+* html ul.threecol,
+* html ul.twocol,
+* html .group,
+* html ul.nav,
+* html h3.tab,
+* html div#brandsModule:after { /* IE6 */
+	height: 1%;
+	}
+*:first-child+html .threecol,		
+*:first-child+html .twocol,	
+*:first-child+html .group,
+*:first-child+html ul.nav,
+*:first-child+html h3.tab,
+*:first-child+html div#brandsModule:after { /* IE7 */
+	min-height: 1px;
+	}	
+.group:after, .twocol:after, .threecol:after, #brandsModule:after {clear:both; content:"."; display:block; height:0; visibility:hidden;}
+
+/* Page breaks  */
+#avisoPriv {page-break-before:avoid;}
+
+/* Recibo */
+/* .toggleContent {display:block !important;} */
+.totalswrap {border-top:2px solid #999; }
+#receipt {border: none;}
+#receipt, .cuponOperador p  {margin:0 !important;}
+.list td {padding:.25em 1.5em .5em .25em; border-bottom:1px dotted #ccc;}
+
+
+ 

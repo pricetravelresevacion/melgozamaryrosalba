@@ -1,0 +1,559 @@
+@charset "utf-8";
+/* Sprites para front end sitios del canal PriceTravel online y agentes. */
+.mSprite, .sprite2, .spriteBank {background:url('//cdnpt.com/images/spritesmaster35.png') no-repeat;}
+
+/* url de pruebas
+.mSprite, .sprite2, .but, #booker h1, #divInfoHotel h3, #divInfoCruise h3, #left #ctrl h2, #divInfoHotel h3, #divPackageInfo h3, #innerSel #continueBtn {background:url('//test.pricetravel.com.mx/cdn/images/spritesmaster32.png') no-repeat;}
+.mSprite, .sprite2, .but, #innerSel #continueBtn, .spriteBank, #booker h1, #divInfoHotel h3, #divInfoCruise h3, #left #ctrl h2, #divInfoHotel h3, #divPackageInfo h3, #innerSel #continueBtn {background:url('http://cdnpt.com/images/spritesmaster32.png') no-repeat;}*/
+
+#top #divPackageInfo h3  {background:none;}
+.hlogoMain {background-position:0 0; width:192px; height:31px;}
+.hlogoMX {background-position:0 0; width:192px; height:37px;}
+.hlogoUS {background-position:0 -37px; width:192px; height:37px;}
+.hlogoAR {background-position:0 -74px; width:192px; height:37px;}
+.hlogoCO {background-position:0 -112px; width:192px; height:37px;}
+.hlogoEC {background-position: 0 -151px; width: 192px; height: 31px;}
+#logo a:hover img {background-position:0 -992px;}
+.fxpay6 {background-position:-170px -742px; width:29px; height:30px; text-indent:-9999px;}
+.msi12 {background-position:-170px -742px; width:29px; height:30px; text-indent:-9999px;}
+.vvm {background-position:0 -910px; width:50px; height:28px; vertical-align:middle;}
+.world {background-position:-194px -1030px; width:16px; height:16px; vertical-align:middle;}
+.tweet {background-position:-164px -837px; width:25px; height:25px; vertical-align:middle; margin:0 0 0 .25em; }
+.fb {background-position:-189px -837px; width:25px; height:25px; vertical-align:middle;  margin:0 0 0 .25em; }
+.goop {background-position:-214px -837px; width:25px; height:25px; vertical-align:middle;  margin:0 0 0 .25em;}
+
+a:hover .tweet {background-position:-164px -862px;}
+a:hover .fb    {background-position:-189px -862px;}
+a:hover .goop  {background-position:-214px -862px;}
+
+.pointD { background-position: -222px -742px; height: 16px; vertical-align: middle; width: 16px;}
+.pointR {background-position: -206px -744px; height: 16px;  vertical-align: middle; width: 16px;}
+ul.cal .pointR {background-position: -206px -808px;}
+img.cross {background-position: -165px -807px;  display: inline-block; height: 16px;  margin: 0 2px 1px 0;opacity: 0.8; vertical-align: middle;  width: 16px;}
+a img.cross:hover {background-position: -181px -807px; opacity: 1;}
+.intIcon {background-position:0 -1447px; width:24px; height:24px; vertical-align:middle; margin:0 .5em 0 0;}
+.fcy {background-position: -165px -789px; width: 16px; height: 16px; vertical-align: middle; padding: 0 5px 0 0; }
+.rightScr {background-position: 0 -1060px;}
+.leftdis {background-position: -60px -1029px;}
+.leftScr {background-position: 0 -1029px;}
+.rightdis {background-position: -60px -1060px;}
+.visa, .masterCard, .amex, .diners {width:30px; height:18px; display:inline-block; vertical-align: middle;}
+.visa {background-position: 0 -397px;}
+.masterCard {background-position: -30px -397px;}
+.diners {background-position: -60px -397px;}
+.amex {background-position: -90px -397px;}
+
+/* Iconos grises de servicios */
+.hotelIco, .flightIco, .busIco, .tourIco, .transferIco, .insuranceIco {width:16px; height:16px; vertical-align:middle;}
+.hotelIco {background-position:0 -1700px;}
+.flightIco {background-position:-16px -1700px;}
+.tourIco {background-position:-48px -1700px;}
+.transferIco {background-position:-32px -1700px;}
+.busIco {background-position:-80px -1700px;}
+.insuranceIco {background-position:-112px -1700px;}
+.services .mSprite {margin:0 2px 0 6px; display:inline-block; vertical-align: middle;}
+
+/* Botón verde */
+.greenButton {background-position:0 -454px; background-color:#1A8A01;}
+.greenButton:hover {background-position:0 -526px;}
+.plusIcon {background-position:-88px -353px; width:8px; height:8px; display:inline-block;}
+
+/* Botón rosa */
+.but { background-color: #ED1556; background-position: 0 -598px;}
+a.but:hover, .but:hover, .but:visited :hover {background-position:0 -670px; text-decoration:none;}
+
+table p.orm a, #footer a, .opinions a, .sidbar ul a, .rateName a {text-decoration:none;}
+.pointDown { background-position: -206px -788px ;height: 16px; width: 16px;}
+.pointUp {background-position: -222px -788px;height: 16px; width: 16px;}
+.mainpic {background: url('//cdnpt.com/images/bgpic.gif') no-repeat;padding:12px 11px 14px 11px;position:relative;}
+.roomsec .marquee {width:125px;}
+#listhead img {position: relative; top:3px; padding-right: 3px; margin-left: 10px;}
+a img {display: inline; border: none;}
+#photos img {margin:0 2px 2px 0;}
+img.mail {background-position:-26px -330px; width:16px; height:16px; vertical-align:middle;}
+th#thTime img.mSprite, #thStops img.mSprite, #thTotal img.mSprite {background-position:-42px -330px; width:16px; height:16px;}
+th#thTime.active img.mSprite, #thStops.active img.mSprite, #thTotal.active img.mSprite {background-position:-74px -330px; width:16px; height:16px;}
+th#thTime.active.asd img.mSprite, #thStops.active.asd img.mSprite, #thTotal.active.asd img.mSprite {background-position:-58px -330px; width:16px; height:16px;}
+span.mailc {display:inline-block; height:13px; width:237px; background-position:0 -381px;}
+span.intp {display:inline-block; height:13px; width:12px; background-position:-91px -1078px;}
+span.rp {background-position:-99px -549px; display:inline-block; height:20px; width:62px; vertical-align:bottom;}
+span.bd {background-position:0 -553px; display:inline-block; height:16px; width:50px; margin:0 0 0 5px; vertical-align:bottom;}
+span.ccs {background-position:0 -571px; display:inline-block; height:22px; width:95px; vertical-align:bottom;}
+.seven, .bmx, .bbv, .bnt {width:32px; height:24px; display:inline-block;}
+.alerticon {background-position:0 0; height:16px; width:16px; display:inline-block;}
+span.tc {background-position:-95px -572px; width:32px; height:28px;}
+
+.paypal {background-position: 0px -1739px; width: 65px; height: 18px; margin: 5px 0 0 10px !important; vertical-align: middle;}
+.paypal-gray {background-position: 0px -1757px; width: 65px; height: 18px; margin: 5px 0 0 10px !important; vertical-align: middle;}
+.paypal-gray2 {background-position: -26px -1779px; width: 25px; height: 30px; margin: 0px 10px 0 0px !important; vertical-align: middle;}
+.oxxo {background-position:-72px -1448px; width:42px;height:20px;}
+.seven {background-position:-160px -572px;}
+.onestar, .onehalf, .twostar, .twohalf, .threestar, .threehalf, .fourstar, .fourhalf, .fivestar, .fivehalf, .sixstar {height:16px; display:inline-block;}
+.onestar {background-position:0 -415px; width:16px;}
+.onehalf {background-position:0 -415px; width:32px;}
+.twostar {background-position:-32px -415px; width:32px;}
+.twohalf {background-position:-32px -415px; width:48px;}
+.threestar {background-position:-80px -415px; width:48px;}
+.threehalf {background-position:-80px -415px; width:64px;}
+.fourstar {background-position:-144px -415px; width:64px;}
+.fourhalf {background-position:-144px -415px; width:80px;}
+.fivestar {background-position:0 -431px; width:80px;}
+.fivehalf {background-position:0 -431px; width:96px;}
+.sixstar {background-position:-96px -431px; width:96px;}
+
+/* Bancos */
+.bank2 /* Amex */ {background-position:-91px -1062px; width:18px; height:16px;}
+.bank3 /* Banamex */  {background-position:-109px -1062px; width:16px; height:16px;}
+.bank4 /* Santander */  {background-position:-125px -1062px;width:17px; height:16px;}
+.bank5 /* HSBC */ {background-position:-142px -1062px; width:27px; height:16px;}
+.bank6 /* Banorte */  {background-position:-169px -1062px; width:16px; height:16px;}
+.bank7 /* Scotiabank */  {background-position:-185px -1062px; width:16px; height:16px;}
+.bank8 /* Bancomer */ {background-position:-202px -1062px; width:16px; height:16px;}
+.bank9 /* Ixe */ {background-position:-133px -1472px; width:16px; height:16px;}
+.bank10 /* Ixe */ {background-position:-152px -1472px; width:16px; height:16px;}
+.bank11 /* BanBajio */ {background-position:-96px -1309px; width:20px; height:16px;}
+/* .bank12  PriceTravel - no habilitado */
+/* .bank13  Banco Azteca - no habilitado */
+.bank14 /* Afirme */ {background-position:-116px -1488px; width:22px; height:16px;}
+/* .bank15  Bank of America - no habilitado */
+/* .bank16 Credomatic - no habilitado */
+/* .bank17 BanCoppel - no habilitado */
+.bank18 /* Davivienda - Colombia */  {background-position:-91px -1046px; width:18px; height:16px;}
+.bank19 /* Liverpool */ {background-position:-138px -1488px; width:17px; height:16px;}
+/* .bank20  Meadows Bank - no habilitado */
+.bank21 /* BanRegio */ {background-position:-92px -1488px; width:25px; height:16px;}
+.bank22 /* Banco Ahorro Famsa */ {background-position:-78px -1488px; width:14px; height:16px;}
+.bank23 /* Invex */ {background-position:-155px -1427px; width:32px; height:16px;}
+.bank24 /* Banca Mifel */ {background-position:-168px -1472px; width:22px; height:16px;}
+.bank25 /* Banjercito */ {background-position:-216px -1472px; width:16px; height:16px;}
+.bank26 /* Itaucard */ {background-position:-190px -1472px; width:16px; height:16px;}
+
+
+.bank2, .bank3, .bank4, .bank5, .bank6, .bank7, .bank8, .bank9, .bank10, .bank11, .bank12, .bank13,  .bank14, .bank15, .bank16, .bank17, .bank18, .bank19, .bank20,
+.bank21, .bank22, .bank23, .bank24, .bank25, .bank26 {vertical-align:middle;}
+
+#payPlans .bank2, #payPlans .bank3, #payPlans .bank4, #payPlans .bank5, #payPlans .bank6, #payPlans .bank7, #payPlans  .bank8, #payPlans .bank9, #payPlans .bank10, #payPlans .bank11,
+#payPlans .bank12, #payPlans .bank13,  #payPlans .bank14, #payPlans .bank15, #payPlans .bank16, #payPlans .bank17, #payPlans .bank18, #payPlans .bank19, #payPlans .bank20,
+#payPlans .bank21, #payPlans .bank22, #payPlans .bank23,  #payPlans .bank24, #payPlans .bank25, #payPlans .bank26 {margin:3px 0;}
+
+/* Opiniones */
+.rateHalf, .rateOne, .rateOnehalf, .rateTwo, .rateTwohalf, .rateThree, .rateThreehalf, .rateFour, .rateFourhalf, .rateFive {width:100px; height:11px; display:inline-block; text-indent:-10000px; vertical-align:middle;}
+.rateHalf {background-position:0 -1619px;}
+.rateOne {background-position:-100px -1619px;}
+.rateOnehalf {background-position:0 -1630px;}
+.rateTwo {background-position:-100px -1630px;}
+.rateTwohalf {background-position:0 -1641px;}
+.rateThree {background-position:-100px -1641px;}
+.rateThreehalf {background-position:0 -1652px;}
+.rateFour {background-position:-100px -1652px;}
+.rateFourhalf {background-position:0 -1663px;}
+.rateFive {background-position:-100px -1663px;}
+.pticon  { /* background-position:-203px -1472px; height:16px; width:16px; vertical-align:middle; */ display:none;}
+
+/* SPRITES FORMAS DE PAGO */
+td.issuer .bank3, tr.msiPromo .bank3 /* Banamex */ {width:31px; margin:0 11px 0 0; height:25px; background-position:0 -1397px; vertical-align:middle; display:inline-block;}
+td.issuer .bank2 /* Amex */ {width:31px; margin:0 11px 0 0; height:25px; background-position:-31px -1397px; vertical-align:middle; display:inline-block;}
+td.issuer .bank8 /* Bancomer */ {width:31px; margin:0 11px 0 0; height:25px; background-position:-62px -1397px; vertical-align:middle; display:inline-block;}
+td.issuer .bank6 /* Banorte */ {width:31px; margin:0 11px 0 0; height:25px; background-position:-93px -1397px; vertical-align:middle; display:inline-block;}
+td.issuer .bank5 /* HSBC */ {width:31px; margin:0 11px 0 0; height:25px; background-position:-124px -1397px; vertical-align:middle; display:inline-block;}
+td.issuer .bank4 /* Santander */{width:27px; margin:0 15px 0 0; height:25px; background-position:-155px -1397px; vertical-align:middle; display:inline-block;}
+td.issuer .bank7 /* Scotiabank */ {width:31px; margin:0 11px 0 0; height:24px; background-position:0 -1422px; vertical-align:middle; display:inline-block;}
+td.issuer .bank9 /* Ixe */ {width:31px; margin:0 11px 0 0; height:25px; background-position:-31px -1422px; vertical-align:middle; display:inline-block;}
+td.issuer .bankX /* Otros bancos */ {width:24px; margin:0 11px 0 0; height:32px; background-position:-147px -1246px; vertical-align:middle; display:inline-block; opacity:.7;}
+td.issuer .bank10 /* Inbursa */ {width:31px; margin:0 11px 0 0; height:25px; background-position:-93px -1422px; vertical-align:middle; display:inline-block;}
+td.issuer .bank11 /* BanBajio */ {width:30px; margin:0 12px 0 0; height:25px; background-position:-125px -1422px; vertical-align:middle; display:inline-block;}
+td.issuer .bank14 /* Afirme */    {margin:0 9px 0 0; background-position:-198px -1447px; width:33px; height:25px; vertical-align:middle; display:inline-block;}
+td.issuer .bank18 /* Davivienda - Colombia */  {background-position:-110px -1036px; width:29px; height:26px;}
+td.issuer .bank19 /* Liverpool */ { margin:0 17px 0 0; background-position:-213px -1422px; width:25px; height:25px; vertical-align:middle; display:inline-block;}
+
+td.issuer .bank21 /* BanRegio */ {background-position:-161px -1447px; width:36px; height:25px; vertical-align:middle; display:inline-block;}
+td.issuer .bank22 /* Banco Ahorro Famsa */ {margin:0 20px 0 0; background-position:-139px -1447px; width:22px; height:25px; vertical-align:middle; display:inline-block;}
+td.issuer .bank23 /* Invex */ {margin:0 10px 0 0; background-position:-155px -1422px; width:32px; height:25px; vertical-align:middle; display:inline-block;}
+td.issuer .bank24 /* Banca Mifel */ {margin:0 8px 0 0; background-position:-182px -1397px; width:34px; height:25px; vertical-align:middle; display:inline-block;}
+td.issuer .bank25 /* Banjercito */ {margin:0 17px 0 0; background-position:-114px -1447px; width:25px; height:25px; vertical-align:middle; display:inline-block;}
+td.issuer .bank26 /* Itaucard */ {margin:0 17px 0 0; background-position:-187px -1422px; width:25px; height:25px; vertical-align:middle; display:inline-block;}
+
+td.issuer .exito /* tarjeta exito disponible sólo en Colombia */ {background-position:-54px -1361px; width:54px; height:36px; vertical-align:middle; display:inline-block;}
+td.issuer .codensa /* tarjeta codensa disponible sólo en Colombia */ {background-position:0 -1361px; width:54px; height:36px; vertical-align:middle; display:inline-block;}
+
+td.formDetail .bank3 /*  Banamex */ {width:16px; height:16px; background-position:0 -1472px; vertical-align:middle; display:inline-block;}
+td.formDetail  .bank2 /* Amex */ {width:16px; height:16px; background-position:-17px -1472px; vertical-align:middle; display:inline-block;}
+td.formDetail  .bank8 /* Bancomer */ {width:16px; height:16px; background-position:-36px -1472px; vertical-align:middle; display:inline-block;}
+td.formDetail  .bank6 /* Banorte */ {width:17px; height:16px; background-position:-55px -1472px; vertical-align:middle; display:inline-block;}
+td.formDetail  .bank5 /* HSBC */ {width:20px; height:16px; background-position:-74px -1472px; vertical-align:middle; display:inline-block;}
+td.formDetail  .bank4 /* Santander */{width:18px; height:16px; background-position:-96px -1472px; vertical-align:middle; display:inline-block;}
+td.formDetail  .bank7 /* Scotiabank */ {width:16px; height:16px; background-position:-117px -1472px; vertical-align:middle; display:inline-block;}
+td.formDetail  .bank9 /* Ixe */ {width:16px; height:16px; background-position:-133px -1472px; vertical-align:middle; display:inline-block;}
+td.formDetail  .bank11, td.formDetail  .bank10,   /* Ixe */ #opsFilters p, #globalRating br {display:none;}
+
+/* pacth, quitar al resolver case584979 */
+td.formDetail .bank11, td.formDetail .bank12, td.formDetail .bank13, td.formDetail .bank14, td.formDetail .bank15, td.formDetail .bank16, td.formDetail .bank17,
+td.formDetail .bank18, td.formDetail .bank18, td.formDetail .bank19, td.formDetail .bank20, td.formDetail .bank21, td.formDetail .bank22, td.formDetail .bank23,
+td.formDetail .bank24, td.formDetail .bank25, td.formDetail .bank26 {display:none;}
+/* fin patch */
+
+img.credit {width:24px; height:24px; background-position:0 -1447px; vertical-align:middle; display:inline-block;}
+img.debit {width:24px; height:24px; background-position:-24px -1447px; vertical-align:middle; display:inline-block;}
+img.cash {width:24px; height:24px; background-position:-48px -1447px; vertical-align:middle; display:inline-block;}
+
+/* Selector de países en lista de destinos de tour */
+.countrySelector img{margin-right: 0.4em; display:inline-block;}
+.mx, .do, .jm, .us, .ar, .cr, .es, .cu, .bz, .gt, img.fra, img.co, img.cn, img.ca, img.ec, img.aw, img.bs, img.pa, img.ve, img.jp {height: 11px;width: 16px;}
+.CountryTab img {height: 11px;width: 16px; background-position:-80px -1320px;} /* imagen default para tabs de hoteles por país en la sección de cadenas */
+.world {width:16px; height:16px; background-position:-194px -1030px;}
+.mx, .CountryTab .mx {background-position:0 -1298px;}
+.do, .CountryTab .do {background-position:-16px  -1298px;}
+.jm, .CountryTab .jm {background-position:-32px  -1298px;}
+.cu, .CountryTab .cu {background-position:-48px -1298px;}
+.us, .CountryTab .us {background-position:-64px -1298px;}
+.es, .CountryTab .es  {background-position:-80px -1298px;}
+.gt, .CountryTab .gt {background-position:-160px -1298px;}
+img.co, .CountryTab img.co {background-position:-176px -1298px;}
+.ar, .CountryTab .ar {background-position:-96px -1298px;}
+.cr , .CountryTab .cr {background-position:-112px -1298px;}
+.bz, .CountryTab .bz {background-position:-128px -1298px;}
+.fra, .CountryTab .fr {background-position:-144px -1298px;}
+img.cn, .CountryTab img.cn {background-position:-192px -1298px;}
+img.ca, .CountryTab img.ca {background-position:-208px -1298px;}
+img.ve, .CountryTab img.ve {background-position:-224px -1298px;}
+img.aw, .CountryTab img.aw {background-position:0 -1320px;}
+img.bs, .CountryTab img.bs {background-position:-16px -1320px;}
+img.pa, .CountryTab img.pa {background-position:-32px -1320px;}
+img.ec, .CountryTab img.ec {background-position:-48px -1320px;}
+img.jp, .CountryTab img.jp {background-position:-64px -1320px;}
+.hotIco, .sidebarModule img.tour {display: inline-block; height: 16px;vertical-align: middle; width: 16px;}
+.hotIco {background-position: -210px -1030px; }
+.sidebarModule img.tour {background-position: -222px -1062px; }
+.pointL {background-position: -222px -808px;height: 16px;width: 16px;vertical-align: middle;}
+
+/* Paquetes */
+.pack {/* background-position:0 -1709px; background-repeat:repeat-x; */ background-color:#fafafa; background-image:none;}
+
+/* Sprites cruceros */
+.grayIcon {background:url('https://cdnpt.com/images/grayIcons.png') no-repeat;}
+img.default, .listIcon, .bar, .cutlery, #cruiseContent .food, .library, .boat, .starIcon, .coins, .monitor, .gray-credit-card, .leftArrow, .rightArrow, .pwrOutlet, .euroPwrOutlet, .casino, .keynote, .deporte, .disco, .bar, .alberca, .spa, .smiley, .pool, .arte, .golfGray,.runtrack, .internet, .icesk, .money, .printerIcon, .docIcon, .seatIcon, .blue-check, .money-icon, .food-icon, .bar-icon, .ribbon-icon, .spa-icon, .grayMarker, .good, .comments {width:32px; height:32px; opacity:.7; display:inline-block; vertical-align:middle;}
+img.default {background-position:-95px -1150px; }
+.listIcon {background-position:-191px -526px; }
+.bar, .bar-icon {background-position:0 0;}
+.cutlery, #cruiseContent .food, .food-icon  {background-position:-287px -1293px;}
+.library {background-position:-334px -381px;}
+.boat {background-position:-239px -1197px;}
+.starIcon {background-position:-383px -188px;}
+.firstlast .leftArrow, .firstlast .rightArrow {opacity:.2;}
+.leftArrow {background-position:0 -1005px;}
+.rightArrow {background-position:-47px -1005px;}
+.pwrOutlet {background-position:-334px -1438px;}
+.euroPwrOutlet {background-position:-287px -1438px;}
+.casino {background-position:0 -1659px;}
+.keynote {background-position:-47px -284px;}
+.spa {background-position:-95px -1659px;}
+.smiley {background-position:-143px -1659px;}
+.span3 img.grayIcon {float:left; margin:0 3px 0 0;}
+.pool {background-position:0 -1246px;}
+.disco  {background-position:-383px -45px;}
+.arte {background-position:-191px -1659px;}
+.golfGray {background-position:-238px -1659px;}
+.runtrack {background-position:-287px -1659px;}
+.internet {background-position:0 -766px;}
+.icesk {background-position:-47px -93px;}
+.money {background-position:-335px -1053px;}
+.whatsIn .money {background-position:0 -351px; width:32px; height:32px; display:inline-block; opacity:1;}
+.printerIcon {background-position:-239px -45px;}
+.innerModule .seatIcon {background-position:-335px -1659px;}
+.docIcon {background-position:-287px -142px;}
+.blue-check {background-position:-32px -351px; }
+.money-icon  {background-position: 0 -351px; opacity: 1;}
+.ribbon-icon {background-position: -432px -1659px;}
+.spa-icon {background-position: -432px -1659px;}
+.white-check {width:12px; height:11px; background-position:-132px -1309px;}
+#bannerHomeDesc .white-check {margin:0 3px 0 0;}
+#bannerHomeDesc ul {margin:0 0 .25em 1em;}
+#bannerHomeDesc li:last-child {margin:0 0 0 .25em;}
+.coins {background-position:-335px -141px;}
+.monitor {background-position:-287px -381px;}
+.gray-credit-card  {background-position:-335px -1246px;}
+.gray-user {background-position:-146px 0;width: 32px;
+height: 32px;opacity:.7; display:inline-block; vertical-align:middle;}
+.compass-icon {width: 17px;height: 17px;background-position: -128px -1701px;display: inline-block;vertical-align: middle;margin-right: 0.2em;}
+
+.money12 {background-position:-64px -351px; width:12px; height:12px; display:inline-block; vertical-align:middle;}
+.blueCheck12 {background-position:-76px -351px; width:12px; height:12px; display:inline-block; vertical-align:middle;}
+
+.mapMarker, #cruiseItinerary .mapMarker {background-position:-227px -1030px; width:10px; height:14px; display:inline-block; padding:0 2px 0 0; vertical-align:middle;}
+.mapMarkerDis, #cruiseItinerary .mapMarkerDis {background-position:-227px -1043px; width:10px; height:14px; display:inline-block; padding:0 2px 0 0;}
+.grayMarker {background-position:-95px -1149px;}
+
+/*para trophy*/
+.good {background-position:-2px -720px;}
+.comments {background-position:-194px -1148px;}
+
+
+/* Autobuses */
+.scheck {background-position: -165px -789px;height: 16px;padding: 0 1px 0 0;vertical-align: middle;width: 16px;}
+
+/* Halflings iconos grises */
+.iconList i, .plans i {opacity: .5;}
+.iconList .option-active i, .option-active, li.option-active a {opacity: 1; color:#333;}
+
+
+
+/* Certificaciones */
+.amipci {background-position:-87px -788px; width:78px; height:45px;}
+.socio {background-position:0 -834px; width:87px; height:46px; display:inline-block; margin:0;}
+.verisign {background-position:0 -742px; width:94px; height:46px;}
+.esr {background-position:0 -1092px; width:116px; height:45px;}
+#tiles li img {display:block; margin:0 auto .5em;}
+#footer .theCode {background-position:-161px -1156px; width:50px; height:48px; margin:0 3px;}
+.theCode {background-position:-113px -1156px; width:48px; height:48px;}
+
+.iata {background-position:-94px -742px; width:72px; height:45px;}
+.asta {background-position:0 -788px; width:86px; height:45px;}
+.geotrust {background-position:-50px -910px; width:148px; height:26px;}
+.creditCards {background-position:0 -880px; width:152px; height:30px; vertical-align:top;}
+.amav {background-position:-87px -834px; width:83px; height:45px;}
+.hSprite {background:url('//cdnpt.com/images/featSprites12.jpg') no-repeat;}
+
+/* PTS */
+#pagosPTS img.credit {background-position: -253px -574px; height: 62px; width: 32px;}
+#pagosPTS img.debit { background-position: -189px -603px; height: 32px; width: 32px;}
+#pagosPTS img.cash { background-position: -221px -603px;height: 32px; width: 32px;}
+
+/* Simbología cruceros */
+.delta,.asterisk,.dagger,.connected,.handicap,.diamond,.dblDagger,.sq,.barC,.triang,.dblSq,.halfSq,.dblTriang, .rhomb, .sandClock, .ache, .efeCe, .starIcon, .sqCircle, .doubleWhiteRect, .point, .doublePoint, .uve {width:16px; height:16px; margin:0 2px 0 0; vertical-align:middle; display:inline-block; opacity:.7;}
+/* Simbología Royal Caribbean */
+.delta {background-position:0 -1137px;}
+.asterisk {background-position:-16px -1137px;}
+.dagger {background-position:-32px  -1137px;}
+.connected {background-position:-48px  -1137px;}
+.handicap {background-position:-64px  -1137px;}
+.diamond {background-position:-80px  -1137px;}
+.dblDagger {background-position:-96px -1137px;}
+/* Simbología Celebrity y Azamara */
+.sq {background-position:-112px  -1137px;}
+.barC {background-position:-128px  -1137px;} /* Lleva la "C" por "connected staterooms" la clase "bar" ya está tomada para pintar el icono de una copa de martini */
+.triang {background-position:-144px  -1137px;}
+.dblSq {background-position:-160px  -1137px;}
+.halfSq {background-position:-176px  -1137px;}
+.dblTriang  {background-position:-192px  -1137px;}
+/* Simbología MSC */
+.rhomb {background-position:-32px  -1256px;}
+.sandClock {background-position:-208px -1137px;}
+.ache {background-position:-224px -1137px;}
+.efeCe {background-position:-64px  -1256px;}
+.starIcon {background-position:-48px -1256px;}
+.sqCircle {background-position:-0 -1256px;}
+.doubleWhiteRect {background-position:-16px -1256px;}
+/* Simbología Carnival */
+.point {background-position:-80px -1256px;}
+.doublePoint {background-position:-96px -1256px;}
+.uve {background-position:-112px -1256px;}
+
+/* Home cruceros */
+.diamnd-rci {background-position:0 -1158px; width:36px; height:36px;}
+.diamnd-cel {background-position:-72px -1158px; width:36px; height:36px;}
+.diamnd-aza {background-position:-36px -1158px; width:36px; height:36px;}
+.diamnd-msc {background-position:0 -1220px; width:36px; height:36px;}
+.diamnd-ccl {background-position:-36px -1220px; width:36px; height:36px;}
+.diamnd-ncl {background-position:-72px -1220px; width:36px; height:36px;}
+.diamnd-cst {background-position:-144px -1220px; width:36px; height:36px;}
+.diamnd-plm {background-position:-180px -1220px; width:36px; height:36px;}
+.diamnd-prn {background-position:-108px -1220px; width:36px; height:36px;}
+.whiteMarker {background-position:0 -1195px; width:26px; height:25px; display:inline-block; vertical-align:middle;}
+.whiteCal {background-position:-52px -1195px; width:26px; height:25px; display:inline-block;vertical-align:middle;}
+.whiteKeys {background-position:-26px -1195px; width:26px; height:25px; display:inline-block;vertical-align:middle;}
+.shipIcon {width:16px; height:16px; background-position:-48px -1488px; display:inline-block; opacity:.5; vertical-align:middle;}
+.grayFlagIcon {width:16px; height:16px; background-position:-64px -1488px; display:inline-block; opacity:.5; vertical-align:middle;}
+
+/* Asignación de asientos de vuelo */
+.departIcon {width:26px; height:24px; background-position:-116px -1092px; display:inline-block; vertical-align:middle;}
+.returnIcon {width:26px; height:24px; background-position:-142px -1092px; display:inline-block; vertical-align:middle;}
+#mapContainer .leftArrow {width:32px; height:32px; background-position:-168px -1092px; display:inline-block; vertical-align:middle; position:relative; left:-24px;}
+#mapContainer .rightArrow {width:32px; height:32px; background-position:-200px -1092px; display:inline-block; vertical-align:middle;  position:relative; right:-28px;}
+.seatIcon {background-position:-78px -1195px; display:inline-block; vertical-align:middle; height:24px;}
+.infoIcon {background-position:-214px -1194px; width:27px; height:27px; display:inline-block; vertical-align:middle;}
+#ap_seatMap .infoIcon {float:left;}
+
+/* Lista de vuelo */
+.mSprite.depart, .mSprite.return{ display: inline-block;	width: 16px;	height: 16px; vertical-align: middle;}
+.mSprite.depart{background-position:-138px -330px;}
+.mSprite.return{background-position:-154px -330px;}
+
+/* Map Sprites */
+.nav-pills img, .ap_photo img, .ap_video img {background-image:url('../images/shared/maps-sprite.png'); background-repeat:no-repeat;}
+.video-icon, .photo-icon {vertical-align:middle;width:14px;height:20px;margin-right:3px;}
+.video-icon  {background-position:-188px 0; opacity:.6;}
+.active .video-icon, .active .photo-icon, .btn:hover img  {opacity:1;}
+.photo-icon {background-position:-160px 0; opacity:.6;}
+.ap_video img.overlay-image {background-image:none;}
+
+
+/* Patch para mostrar correctamente los calendarios, cambiaron los ids con el último tag (23 ene 2013) */
+
+.field .yui-overlay {
+z-index: 40 !important;
+}
+
+.field .yui-overlay {
+position: absolute !important;
+font-size: 11px;
+}
+
+#addon_container li.img img {width:70px;}
+
+
+/*sprites para hoteles por interés de PriceTravel Trophy*/
+.spriteInt {background: url('//cdnpt.com/images/spritesInterest.png?v=2'); background-repeat: no-repeat;}
+.boutique, .bungalow, .colonial, .deluxe, .eco, .family, .gay, .golf, .honeyMoon, .deal, .pet, .beach, .adultsOnly, .allInclusive, .spaInt, .condos, .compass-country, .world-icon {width:32px; height:32px; display:inline-block; vertical-align:middle;}
+
+/*.boutique { background-position:0px -32px; }*/
+.boutique { background-position:0px 0px; }
+.bungalow { background-position:-33px 0px; }
+.colonial { background-position:-68px 0px; }
+.deluxe { background-position:-102px 0px; }
+.eco { background-position:-134px 0px; }
+.family { background-position:-167px 0px; }
+.gay { background-position:-199px 0px; }
+.golf{ background-position:-230px 0px; }
+.honeyMoon{ background-position:-262px 0px; }
+.deal{ background-position:-296px 0px; }
+.pet{ background-position:-329px 0px; }
+.beach{ background-position:-365px 0px; }
+.adultsOnly { background-position:-396px 0px; }
+.allInclusive { background-position:-430px 0px; }
+.spaInt { background-position:-464px 0px; }
+.condos { background-position:-498px 0px; }
+.compass-country{ background-position:0px -34px;}
+.world-icon{ background-position:-31px -34px;}
+.highlight-green, .leg .highlight-green {color:#008800;}
+
+
+/*sprite para overlays de PriceTravel Trophy -tomadas del estilo bubble de maps.css */
+
+.close a, .close a:hover, .bubble-arrow-down  { background-image: url('//cdnpt.com/images/shared/maps-sprite.png'); background-repeat: no-repeat;}
+.close a {display:block; width:20px; height:20px;text-indent:-999em; background-position:-12px 0;}
+.close a:hover {background-position:-32px 0;}
+.bubble-arrow-down  {background-position:-107px 0; width:19px; height:18px; position:absolute; left:187px; top:100%; }
+.bubble-arrow-right {background-position:-220px 0; width:19px; height:18px; position:absolute; left:-10px; top:50%;  }
+.bubble-arrow-left  {background-position:-220px 0; width:19px; height:18px; position:absolute; left:-10px;  margin-top:12px; }
+
+
+/*Videos*/
+.playIcon {background-position:-120px -1360px; width:20px; height:20px; }
+
+
+/*Hack de multiHabitación para circuitos*/
+select#circuits_Searchbox_RequestedRooms { visibility: hidden; }
+label[for="circuits_Searchbox_RequestedRooms"]  { visibility: hidden; }
+
+@font-face {
+  font-family: "pt-icons";
+  src: url("//cdnpt.com/cssshared/fonts/pt-icons.woff") format("woff");
+  font-weight: normal;font-style: normal;}
+
+/*sprites para pasos de pago Paypal*/
+.spritepp {background: url('//cdnpt.com/images/pp-steps.png'); background-repeat: no-repeat;}
+.step-pp1, .step-pp2, .step-pp3, .step-pp4, .step-pp5 {width: 80px; height: 80px; display: inline-block; vertical-align: middle;}
+.step-pp1 {background-position: 0px 0px;}
+.step-pp2 {background-position: -82px 0px;}
+.step-pp3 {background-position: -162px 0px;}
+.step-pp4 {background-position: -243px 0px;}
+.step-pp5 {background-position: -323px 0px;}
+
+/*hover-images*/
+/*.footerSprites */
+
+a img.img-esr {
+  background: url("http://cdnpt.com/images/footer/spritefter.png") 1px -120px;
+  width: 128px;
+  height: 53px;
+  margin: -2px 15px;
+}
+a:hover img.img-esr {
+  background: url("http://cdnpt.com/images/footer/spritefter.png") 1px -173px;
+
+}
+a img.img-amipci {
+  background: url("http://cdnpt.com/images/footer/spritefter.png") -293px -123px;
+  width: 106px;
+  height: 57px;
+  margin: -2px 15px;
+}
+a:hover img.img-amipci {
+  background: url("http://cdnpt.com/images/footer/spritefter.png") -293px -182px;
+}
+a img.img-norton {
+  background: url("http://cdnpt.com/images/footer/spritefter.png") -399px -121px;
+  width: 102px;
+  height: 55px;
+  margin: -2px 15px;
+}
+a:hover img.img-norton {
+  background: url("http://cdnpt.com/images/footer/spritefter.png") -399px -176px;
+}
+a img.img-socio{
+  background: url("http://cdnpt.com/images/footer/spritefter.png") -501px -122px;
+  width: 97px;
+  height: 51px;
+  margin: -2px 15px;
+}
+a:hover img.img-socio {
+  background: url("http://cdnpt.com/images/footer/spritefter.png") -501px -175px;
+}
+a img.img-colombia {
+  background: url("http://cdnpt.com/images/footer/spritefter.png") 123px -123px;
+  width: 114px;
+  height: 59px;
+  margin: -2px 15px;
+}
+a:hover img.img-colombia {
+  background: url("http://cdnpt.com/images/footer/spritefter.png") 123px -182px;
+}
+a img.img-greatplace {
+  background: url("http://cdnpt.com/images/footer/spritefter.png") -127px -123px;
+  width: 56px;
+  height: 55px;
+  margin: -2px 15px;
+}
+a:hover img.img-greatplace {
+  background: url("http://cdnpt.com/images/footer/spritefter.png") -127px -178px;
+}
+a img.img-placetopay {
+  background: url("http://cdnpt.com/images/footer/spritefter.png") -598px -123px;
+  width: 132px;
+  height: 33px;
+  margin: -2px 15px;
+}
+a:hover img.img-placetopay {
+  background: url("http://cdnpt.com/images/footer/spritefter.png") -598px -157px;
+}
+a img.img-ach {
+  background: url("http://cdnpt.com/images/footer/spritefter.png") -182px -123px;
+  width: 110px;
+  height: 59px;
+  margin: -2px 15px;
+}
+a:hover img.img-ach {
+  background: url("http://cdnpt.com/images/footer/spritefter.png") -182px -183px;
+}
+a img.img-pse{
+  background: url("http://cdnpt.com/images/footer/spritefter.png")-729px -123px;
+  width: 62px;
+  height: 60px;
+  margin: -2px 15px;
+}
+a:hover img.img-pse{
+  background: url("http://cdnpt.com/images/footer/spritefter.png") -729px -183px;
+}
+a img.img-googleplay{
+  background: url("http://cdnpt.com/images/footer/spritefter.png") 224px -242px;
+  width: 97px;
+  height: 34px;
+  margin: 4px 0px;
+}
+a img.img-apple{
+  background: url("http://cdnpt.com/images/footer/spritefter.png") 225px -275px;
+  width: 99px;
+  height: 29px;
+  margin: 4px 0px;
+
+}

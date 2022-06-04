@@ -1,0 +1,975 @@
+// This function is a generic function to create form elements
+function createFormElement(element, type, name, id, value, parent) {
+    var e = document.createElement(element);
+    e.setAttribute("name", name);
+    if(type != null) e.setAttribute("type", type);
+    e.setAttribute("id", id);
+    if(value != null) e.setAttribute("value", value);
+    if (parent != null)
+        parent.appendChild(e);
+    else
+        return e;
+}
+
+function addSelectOption(select, value, text, selected) {
+    var option = document.createElement("option");
+    if(selected)
+      option.setAttribute("selected", "selected");
+    option.setAttribute("value", value);
+    option.appendChild(document.createTextNode(text))
+    select.appendChild(option);
+}
+
+function GetObjectPosition(obj) {
+	var curleft = curtop = 0;
+	if (obj.offsetParent) {
+		curleft = obj.offsetLeft
+		curtop = obj.offsetTop
+		while (obj = obj.offsetParent) {
+			curleft += obj.offsetLeft
+			curtop += obj.offsetTop
+		}
+	}
+	return [curleft,curtop];
+}
+
+function getPosX(obj){
+   var curleft = 0;
+   if(obj.offsetParent)
+      while(1){
+         curleft += obj.offsetLeft;
+         if(!obj.offsetParent)
+            break;
+         obj = obj.offsetParent;
+      }
+   else if(obj.x)
+      curleft += obj.x;
+   return curleft;
+}
+
+function getPosY(obj){
+   var curtop = 0;
+   if(obj.offsetParent)
+      while(1){
+         curtop += obj.offsetTop;
+         if(!obj.offsetParent)
+            break;
+         obj = obj.offsetParent;
+      }
+   else if(obj.y)
+      curtop += obj.y;
+   return curtop;
+}
+
+
+
+
+function createCookie(name, value, days) {
+   var expires = "";
+   if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toGMTString();
+   }
+   document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function eraseCookie(name) {
+   createCookie(name, "", -1);
+}
+
+function openWindowPT(sUrl,sName,iT, iL, iW, iH) {
+   var win;
+   win = window.open(sUrl,sName,'top=' + iT + ',left=' + iL + ',width=' + iW + ',height=' + iH + ',buttons=no,scrollbars=yes,location=no,menubar=no, resizable=yes,status=yes,directories=no,toolbar=no');
+}
+
+function formatNumber(num,dec,thou,pnt,curr1,curr2,n1,n2) {
+   var x = Math.round(num * Math.pow(10,dec));
+   if (x >= 0) 
+      n1=n2='';
+      
+   var y = (''+Math.abs(x)).split('');
+   var z = y.length - dec; 
+   
+   if (z<0) z--; 
+   for(var i = z; i < 0; i++) 
+      y.unshift('0');
+      
+   y.splice(z, 0, pnt); 
+   if(y[0] == pnt) 
+      y.unshift('0'); 
+   
+   while (z > 3) {
+      z-=3; 
+      y.splice(z,0,thou);
+   }
+
+   var r = curr1 + n1 + y.join('') + n2 + curr2;
+   if (r.charAt(r.length-1) == pnt)
+      r = r.substr(0, r.length - 1);
+
+   return r;
+}
+
+function visible(element) {
+   return YAHOO.util.Dom.get(element).style.display != 'none';
+}
+
+function toggle(element) {
+   element = YAHOO.util.Dom.get(element);
+   Element[Element.visible(element) ? 'hide' : 'show'](element);
+   return element;
+}
+
+function hide(element) {
+   YAHOO.util.Dom.get(element).style.display = 'none';
+   return element;
+}
+
+function show(element) {
+    YAHOO.util.Dom.get(element).style.display = '';
+    return element;
+}
+
+function backToTop() {
+   var x1 = x2 = x3 = 0;
+   var y1 = y2 = y3 = 0;
+   
+   if (document.documentElement) {
+      x1 = document.documentElement.scrollLeft || 0;
+      y1 = document.documentElement.scrollTop || 0;
+   }
+   
+   if (document.body) {
+      x2 = document.body.scrollLeft || 0;
+      y2 = document.body.scrollTop || 0;
+   }
+   
+   x3 = window.scrollX || 0;
+   y3 = window.scrollY || 0;
+   
+   var x = Math.max(x1, Math.max(x2, x3));
+   var y = Math.max(y1, Math.max(y2, y3));
+   
+   window.scrollTo(Math.floor(x / 2), Math.floor(y / 2));
+   
+   if (x > 0 || y > 0) {
+      window.setTimeout("backToTop()", 25);
+   }
+}
+
+function trim(str)
+{
+   for(var i=0; i<str.length; i++)
+   {
+      if(str.charAt(i)==" ")
+         str = str.substring(i+1, str.length);
+      else
+         break;
+   }
+   
+   for(var i=str.length-1; i>=0; i=str.length-1)
+   {
+      if(str.charAt(i)==" ")
+         str=str.substring(0, i);
+      else
+         break;
+   }
+   
+   return str;
+}
+
+var wd_L1=new Array(7);
+wd_L1[0]="Sunday";
+wd_L1[1]="Monday";
+wd_L1[2]="Tuesday";
+wd_L1[3]="Wednesday";
+wd_L1[4]="Thursday";
+wd_L1[5]="Friday";
+wd_L1[6]="Saturday";
+
+var wds_L1=new Array(7);
+wds_L1[0]="Sun";
+wds_L1[1]="Mon";
+wds_L1[2]="Tue";
+wds_L1[3]="Wed";
+wds_L1[4]="Thu";
+wds_L1[5]="Fri";
+wds_L1[6]="Sat";
+
+var mn_L1=new Array(12);
+mn_L1[0]="January";
+mn_L1[1]="February";
+mn_L1[2]="March";
+mn_L1[3]="April";
+mn_L1[4]="May";
+mn_L1[5]="June";
+mn_L1[6]="July";
+mn_L1[7]="August";
+mn_L1[8]="September";
+mn_L1[9]="October";
+mn_L1[10]="November";
+mn_L1[11]="December";
+
+var mns_L1=new Array(12);
+mns_L1[0]="Jan";
+mns_L1[1]="Feb";
+mns_L1[2]="Mar";
+mns_L1[3]="Apr";
+mns_L1[4]="May";
+mns_L1[5]="Jun";
+mns_L1[6]="Jul";
+mns_L1[7]="Aug";
+mns_L1[8]="Sep";
+mns_L1[9]="Oct";
+mns_L1[10]="Nov";
+mns_L1[11]="Dec";
+
+var wd_L2=new Array(7);
+wd_L2[0]="Domingo";
+wd_L2[1]="Lunes";
+wd_L2[2]="Martes";
+wd_L2[3]="Miércoles";
+wd_L2[4]="Jueves";
+wd_L2[5]="Viernes";
+wd_L2[6]="Sábado";
+
+var wds_L2=new Array(7);
+wds_L2[0]="Dom";
+wds_L2[1]="Lun";
+wds_L2[2]="Mar";
+wds_L2[3]="Mie";
+wds_L2[4]="Jue";
+wds_L2[5]="Vie";
+wds_L2[6]="Sab";
+
+var mn_L2=new Array(12);
+mn_L2[0]="Enero";
+mn_L2[1]="Febrero";
+mn_L2[2]="Marzo";
+mn_L2[3]="Abril";
+mn_L2[4]="Mayo";
+mn_L2[5]="Junio";
+mn_L2[6]="Julio";
+mn_L2[7]="Agosto";
+mn_L2[8]="Septiembre";
+mn_L2[9]="Octubre";
+mn_L2[10]="Noviembre";
+mn_L2[11]="Diciembre";
+
+var mns_L2=new Array(12);
+mns_L2[0]="Ene";
+mns_L2[1]="Feb";
+mns_L2[2]="Mar";
+mns_L2[3]="Abr";
+mns_L2[4]="May";
+mns_L2[5]="Jun";
+mns_L2[6]="Jul";
+mns_L2[7]="Ago";
+mns_L2[8]="Sep";
+mns_L2[9]="Oct";
+mns_L2[10]="Nov";
+mns_L2[11]="Dic";
+
+function formatDateG(_d,_f,_l){
+   if(_l==1){
+      _f = _f.replace(/\({dayName}\)/g, wd_L1[_d.getDay()]);
+      _f = _f.replace(/\({dayNameShort}\)/g, wds_L1[_d.getDay()]);
+      _f = _f.replace(/\({monthNameShort}\)/g, mns_L1[_d.getMonth()]);
+      _f = _f.replace(/\({monthName}\)/g, mn_L1[_d.getMonth()]);
+   }
+   else{
+      _f = _f.replace(/\({dayName}\)/g, wd_L2[_d.getDay()]);
+      _f = _f.replace(/\({dayNameShort}\)/g, wds_L2[_d.getDay()]);
+      _f = _f.replace(/\({monthNameShort}\)/g, mns_L2[_d.getMonth()]);
+      _f = _f.replace(/\({monthName}\)/g, mn_L2[_d.getMonth()]);
+      }
+      _f = _f.replace(/\({day}\)/g, _d.getDate());
+      _f = _f.replace(/\({year}\)/g, _d.getFullYear());
+   return _f;
+}
+
+function formatTime(_d,_f){
+
+   _f = _f.replace(/H/g,_d.getHours());
+   
+   if(_d.getHours()>12)
+      _f = _f.replace(/h/g,_d.getHours()-12);
+   else
+      _f = _f.replace(/h/g,_d.getHours());
+
+   if(_d.getHours()<10)
+      hours = '0' + _d.getHours();
+   else
+      hours = _d.getHours();
+
+   _f = _f.replace(/HH/g,hours);
+   
+   if(_d.getHours()>12)
+      hours = _d.getHours() - 12;
+   
+   if(hours<10)
+      hours = '0' + hours;
+   
+   _f = _f.replace(/hh/g,_d.getHours());
+
+   if(_d.getMinutes()<10)
+      _f = _f.replace(/mm/g,'0' + _d.getMinutes());
+   else
+      _f = _f.replace(/mm/g,_d.getMinutes());
+   
+   _f = _f.replace(/m/g,_d.getMinutes());
+   
+   if(_d.getHours()>=12)
+      _f = _f.replace(/tt/g,'pm');
+   else
+      _f = _f.replace(/tt/g,'am');
+      
+   return _f;
+}
+
+function sanitize(_s){
+   _s = _s.replace(/;/g, "");
+   _s = _s.replace(/\'/g, "");
+   _s = _s.replace(/--/g, "");
+   _s = _s.replace(/\/\*/g, "");
+   _s = _s.replace(/\*\//g, "");
+   _s = _s.replace(/Xp_/g, "");
+   _s = _s.replace(/</g, "");
+   _s = _s.replace(/>/g, "");
+   
+   return trim(_s);
+
+}
+
+function escapeChars(t) {
+    if (t.charCodeAt(0) < 224) { return t }
+    t = t.toLowerCase();
+    var n = t.charCodeAt(0);
+    if (n >= 224 && n < 231) { return "a" }
+    if (n === 231) { return "c" }
+    if (n >= 232 && n < 235) { return "e" }
+    if (n >= 236 && n < 239) { return "i" }
+    if (n === 241) { return "n" }
+    if (n >= 242 && n < 246) { return "o" }
+    if (n >= 249 && n < 252) { return "u" }
+    if (n === 253) { return "y" }
+    return t;
+}
+
+function escapeString(str) {
+    var t = new Array();
+    for (var i = 0; i < str.length; i++) {
+        t.push(escapeChars(str.substring(i, i + 1)));
+    }
+    return t.join('');
+};
+
+function trim(_s)
+{
+	for(i=0; i<_s.length; )
+	{
+		if(_s.charAt(i)==" ")
+			_s=_s.substring(i+1, _s.length);
+		else
+			break;
+	}
+
+	for(i=_s.length-1; i>=0; i=_s.length-1)
+	{
+		if(_s.charAt(i)==" ")
+			_s=_s.substring(0,i);
+		else
+			break;
+	}
+	
+	return _s;
+}
+
+function formatDate(year, month, day, format) {
+   var result = "";
+   var separator = format.search("-") != -1 ? "-" : "/";
+   var formats = format.split(separator);
+
+   for (var i = 0; formats.length > i; i++) {
+      switch (formats[i]) {
+         case "dd":
+            result = result + "/" + day;
+            break;
+         case "d":
+            if (day[0] == 0) {
+               day = day.substring(1);
+            }
+            result = result + "/" + day;
+            break;
+         case "MM":
+            result = result + "/" + month;
+            break;
+         case "M":
+            if (month[0] == 0) {
+               month = month.substring(1);
+            }
+            result = result + "/" + month;
+            break;
+         case "yy":
+            year = year.substring(2);
+            result = result + "/" + year;
+            break;
+         case "yyyy":
+            result = result + "/" + year;
+            break;
+      }
+   }
+
+   if (result != "") {
+      result = result.substring(1);
+   }
+
+   return (result);
+}
+
+function getDate(text, format) {
+   var checkOK = "0123456789/-.";
+   var Char;
+
+   for (var i = 0; i < text.length; i++) {
+      Char = text.charAt(i);
+      if (checkOK.indexOf(Char) == -1) {
+         return -1;
+      }
+   }
+
+   var separator, textSeparator;
+   var day, month, year;
+
+   if (text.search("-") != -1 && text.search("-") != 0) {
+      textSeparator = "-";
+   } else if (text.search("/") != -1 && text.search("/") != 0) {
+      textSeparator = "/";
+   } else {
+      textSeparator = ".";
+   }
+
+   if (format.search("-") != -1) {
+      separator = "-";
+   } else {
+      separator = "/";
+   }
+
+   var formats = format.split(separator);
+   var dates = text.split(textSeparator);
+
+   if (formats.length == dates.length) {
+      for (var i = 0; formats.length > i; i++) {
+         switch (formats[i]) {
+            case "dd":
+               if (dates[i].length == 2 || dates[i].length == 1) {
+                  day = dates[i];
+               } else {
+                  return -1;
+               }
+               break;
+            case "d":
+               if (dates[i].length == 2 || dates[i].length == 1) {
+                  day = dates[i];
+               } else {
+                  return -1;
+               }
+               break;
+            case "MM":
+               if (dates[i].length == 2 || dates[i].length == 1) {
+                  month = dates[i];
+               } else {
+                  return -1;
+               }
+               break;
+            case "M":
+               if (dates[i].length == 2 || dates[i].length == 1) {
+                  month = dates[i];
+               } else {
+                  return -1;
+               }
+               break;
+            case "yy":
+               if (dates[i].length == 2 || dates[i].length == 4) {
+                  year = dates[i];
+                  if (year < 50) {
+                     year = "20" + year;
+                  } else {
+                     year = "19" + year;
+                  }
+               } else {
+                  return -1;
+               }
+               break;
+            case "yyyy":
+               if (dates[i].length == 2) {
+                  year = dates[i];
+                  if (year < 50) {
+                     year = "20" + year;
+                  } else {
+                     year = "19" + year;
+                  }
+               } else {
+                  year = dates[i];
+                  if (dates[i].length != 4) {
+                     return -1;
+                  }
+               }
+               break;
+         }
+      }
+
+      var result = new Date(year + "/" + month + "/" + day);
+      if (result != "Invalid Date" && result != "NaN/NaN/NaN") {
+         return result;
+      }
+   }
+   return -1;
+}
+
+function isValid(ClientID) {
+   message = "";
+   focus = "";
+   requiredField('sInput', 'rqf', 'You can not leave this field empty', 3)
+   if (message.length > 0) {
+      alert(message);
+      YAHOO.util.Dom.get(focus).focus();
+      return false;
+   }
+   if ((YAHOO.util.Dom.get(ClientID + "_sHidden").value.length == 0 && YAHOO.util.Dom.get(ClientID + "_sInput").value.length != 0) || YAHOO.util.Dom.get(ClientID + "_sInput").value != YAHOO.util.Dom.get(ClientID + "_sHidden").value) {
+      YAHOO.util.Dom.get(ClientID + "_sInput").focus();
+      YAHOO.util.Dom.get(ClientID + "_rqf").style.display = '';
+      return false;
+   }
+   return true
+};
+
+
+function containerCollapseEvent(self, isLoading) { isLoading = false; }
+
+function textboxBlurEvent(self, iYuiDot, yuiIntervalID, idLoading) { hideLoading(iYuiDot, yuiIntervalID, idLoading); }
+
+function evaluateEnter(e, isSelected, ClientID) {
+   if (e.keyCode == 13) {
+      if (isSelected) {
+         var submit = eval(ClientID + "_submit");
+         submit();
+      }
+   }
+};
+
+function hideLoading(iYuiDot, yuiIntervalID, idLoading) {
+   iYuiDot = 4;
+   clearInterval(yuiIntervalID);
+   YAHOO.util.Dom.get(idLoading).style.display = 'none';
+};
+
+function requiredField(objectToEvaluate, requiredFieldName, messageToAdd, minLength) {
+   if (YAHOO.util.Dom.get(objectToEvaluate)) {
+      if (YAHOO.util.Dom.get(objectToEvaluate).value.length <= minLength) {
+         message = message + messageToAdd;
+         if (focus.length == 0)
+            focus = objectToEvaluate;
+
+         YAHOO.util.Dom.get(requiredFieldName).style.display = '';
+      }
+      else {
+         YAHOO.util.Dom.get(requiredFieldName).style.display = 'none';
+      }
+   }
+};
+
+function showDots(iYuiDot, spanDotsId) {
+   if (iYuiDot > 3) {
+      iYuiDot = 0;
+      YAHOO.util.Dom.get(spanDotsId).innerHTML = "";
+   }
+   YAHOO.util.Dom.get(spanDotsId).innerHTML = YAHOO.util.Dom.get(spanDotsId).innerHTML + ".";
+   iYuiDot += 1;
+}
+
+if (!window.PT)
+   PT = {};
+if (!PT.Widgets)
+   PT.Widgets = {};
+
+PT.Widgets.yCalendar = function (clientId, textId, hdnId, config) {
+   var calendarMenu;
+   var calendar;
+   var hasEvents = false;
+   var button;
+   var isDoubleCalendar = false;
+   var secondCalendar;
+   var firstCalendar;
+   var isVisible = false;
+
+   function clickText(timeout) {
+      if (!hasEvents) {
+         setTimeout(function () { buttonClick() }, timeout);
+      } else {
+         setTimeout(function () {
+            calendarMenu.show();
+            calendarMenu.align();
+         }, timeout);
+      }
+   }
+
+   function hideText(timeout) {
+      setTimeout(function () {
+         calendarMenu.hide();
+      }, timeout);
+   }
+
+   function asignDate() {
+      var dateAux = getDate(YAHOO.util.Dom.get(textId).value, config.dateFormat);
+
+      if (dateAux != -1 && dateAux != "Invalid Date" && YAHOO.util.Dom.get(textId).value != config.searchBoxComponentMsg) {
+         YAHOO.util.Dom.get(hdnId).value = dateAux.getFullYear() + "/" + (dateAux.getMonth() + 1) + "/" + dateAux.getDate();
+         calendar.select(dateAux);
+         calendar.cfg.setProperty("pagedate", (dateAux.getMonth() + 1) + "/" + dateAux.getFullYear());
+      } else {
+         YAHOO.util.Dom.get(hdnId).value = "";
+         YAHOO.util.Dom.get(textId).value = config.searchBoxComponentMsg;
+         calendar.cfg.setProperty("pagedate", (new Date().getMonth() + 1) + "/" + new Date().getFullYear());
+      }
+
+      calendar.render();
+   }
+   function showSelectedDays() {
+      calendar.cfg.setProperty("selected", YAHOO.util.Dom.get(hdnId).value);
+
+      if (YAHOO.util.Dom.get(hdnId).value != "") {
+         calendar.cfg.setProperty("pagedate", new Date(YAHOO.util.Dom.get(hdnId).value));
+      }
+      calendar.render();
+   }
+
+   function buttonClick() {
+      hasEvents = true;
+
+      calendarMenu.setBody(" ");
+      calendarMenu.body.id = "calendarcontainer" + clientId;
+      calendarMenu.render("divCalendar" + clientId);
+
+      calendarMenu.cfg.setProperty("context", [jQuery().get(), "tl", "bl"]);
+      calendar = new YAHOO.widget.CalendarGroup("buttoncalendar", calendarMenu.body.id, { PAGES: 2, mindate: config.minDate, maxdate: config.maxDate });
+      calendar.cfg.setProperty("MDY_DAY_POSITION", 3);
+      calendar.cfg.setProperty("MDY_MONTH_POSITION", 2);
+      calendar.cfg.setProperty("MDY_YEAR_POSITION", 1);
+
+      if (config.monthNames) calendar.cfg.setProperty("MONTHS_LONG", config.monthNames);
+      if (config.weekDayNames) calendar.cfg.setProperty("WEEKDAYS_SHORT", config.weekDayNames);
+      if (config.weekDayRestricted) {
+         for (var i = 0; i < config.weekDayRestricted.length; i++)
+            calendar.addWeekdayRenderer(config.weekDayRestricted[i], calendar.renderCellNotThisMonth);
+      }
+      if (config.initialPage) {
+         calendar.cfg.setProperty("pagedate", config.initialPage);
+      }
+      if (!isDoubleCalendar) {
+         if (YAHOO.util.Dom.get(hdnId).value != "") {
+            showSelectedDays();
+         }
+      } else {
+         if (secondCalendar)
+            showSelectedDaysDouble();
+         else
+            showSelectedDaysDoubleSecond();
+      }
+      if (config.openCallback != undefined) {
+         config.openCallback();
+      }
+      calendar.render();
+
+
+      calendar.changePageEvent.subscribe(function () {
+         window.setTimeout(function () {
+            calendarMenu.show();
+         }, 0);
+      });
+
+      calendar.selectEvent.subscribe(function (p_sType, p_aArgs) {
+         var aDate;
+         if (p_aArgs) {
+            aDate = p_aArgs[0][0];
+            calendarMenu.hide();
+
+            var year = new String(aDate[0]), month = aDate[1], day = aDate[2];
+
+            if (day < 10)
+               day = "0" + day;
+
+            if (month < 10)
+               month = "0" + month;
+
+            var d = new Date(year + '/' + month + '/' + day);
+
+            YAHOO.util.Dom.get(hdnId).value = year + "/" + month + "/" + day;
+            YAHOO.util.Dom.get(textId).value = formatDate(year, month, day, config.dateFormat);
+
+            setTimeout(function () { calendar.render(); }, 100);
+
+            if (isDoubleCalendar) {
+               if (secondCalendar)
+                  validateDoubleCalendar(d);
+               else {
+                  validateDoubleCalendarSecond(d);
+               }
+            }
+            if (config.onSelectCallback != undefined) {
+               config.onSelectCallback(d);
+            }
+         } else {
+            calendarMenu.hide();
+         }
+      });
+      button.unsubscribe("click", buttonClick);
+   }
+
+   function compareDates(d, dCheckOut) {
+      return config.isFlight || config.isBus ? d > dCheckOut : d >= dCheckOut;
+   }
+
+   function compareDatesSecond(d, dCheckIn) {
+      return config.isFlight || config.isBus ? d < dCheckIn : d <= dCheckIn;
+   }
+
+   function validateDoubleCalendar(d) {
+      var hdn = jQuery('#' + secondCalendar.getHdnId());
+      var text = jQuery('#' + secondCalendar.getTextId());
+      if (hdn.val() != '') {
+         var dCheckOut = new Date(hdn.val());
+         if (compareDates(d, dCheckOut)) {
+            text.val('dd/mm/aaaa');
+            hdn.val('');
+         }
+         if (secondCalendar.hasEvents()) {
+            if (compareDates(d, dCheckOut) || (dCheckOut.getMonth() >= calendar.pages[0].cfg.getProperty('pagedate').getMonth() && dCheckOut.getMonth() <= calendar.pages[1].cfg.getProperty('pagedate').getMonth()))
+               secondCalendar.getCalendar().cfg.setProperty('pagedate', calendar.pages[0].cfg.getProperty('pagedate'));
+         }
+      }
+      else {
+         if (secondCalendar.hasEvents())
+            secondCalendar.getCalendar().cfg.setProperty('pagedate', calendar.pages[0].cfg.getProperty('pagedate'));
+      }
+      updateSelectedDates();
+   }
+
+   function validateDoubleCalendarSecond(d) {
+      var hdn = jQuery('#' + firstCalendar.getHdnId());
+      var txt = jQuery('#' + firstCalendar.getTextId());
+      if (hdn.val() != '') {
+         var dCheckIn = new Date(hdn.val());
+         if (compareDatesSecond(d, dCheckIn)) {
+            txt.val('dd/mm/aaaa');
+            hdn.val('');
+         }
+         if (firstCalendar.hasEvents()) {
+            if (compareDatesSecond(d, dCheckIn) || (dCheckIn.getMonth() >= calendar.pages[0].cfg.getProperty('pagedate').getMonth() && dCheckIn.getMonth() <= calendar.pages[1].cfg.getProperty('pagedate').getMonth()))
+               firstCalendar.getCalendar().cfg.setProperty('pagedate', calendar.pages[0].cfg.getProperty('pagedate'));
+         }
+      }
+      else {
+         if (firstCalendar.hasEvents())
+            firstCalendar.getCalendar().cfg.setProperty('pagedate', calendar.pages[0].cfg.getProperty('pagedate'));
+      }
+      updateSelectedDatesSecond();
+   }
+
+   function updateSelectedDates() {
+      var hdn2 = jQuery('#' + secondCalendar.getHdnId());
+      if (secondCalendar.hasEvents()) {
+         secondCalendar.getCalendar().cfg.setProperty('selected', hdn2.val() + ',' + jQuery('#' + hdnId).val());
+         setTimeout(function () { secondCalendar.getCalendar().render(); }, 100);
+      }
+      if (hdn2.val() == '')
+         calendar.cfg.setProperty('selected', jQuery('#' + hdnId).val());
+      else
+         calendar.cfg.setProperty('selected', jQuery('#' + hdnId).val() + ',' + hdn2.val());
+   }
+
+   function updateSelectedDatesSecond() {
+      var otherHdn = jQuery('#' + firstCalendar.getHdnId());
+      var currentHdn = jQuery('#' + hdnId);
+      if (firstCalendar.hasEvents()) {
+         firstCalendar.getCalendar().cfg.setProperty('selected', otherHdn.val() + ',' + currentHdn.val());
+         setTimeout(function () { firstCalendar.getCalendar().render(); }, 100);
+      }
+      if (otherHdn.val() == '')
+         calendar.cfg.setProperty('selected', currentHdn.val());
+      else
+         calendar.cfg.setProperty('selected', currentHdn.val() + ',' + otherHdn.val());
+   }
+
+   function showSelectedDaysDouble() {
+      var hdn2 = jQuery('#' + secondCalendar.getHdnId());
+      calendar.cfg.setProperty('selected', jQuery('#' + hdnId).val() + ',' + hdn2.val());
+      if (jQuery('#' + hdnId).val() != '') {
+         calendar.cfg.setProperty('pagedate', new Date(jQuery('#' + hdnId).val()));
+      }
+      else {
+         if (secondCalendar.hasEvents())
+            calendar.cfg.setProperty('pagedate', secondCalendar.getCalendar().pages[0].cfg.getProperty('pagedate'));
+      }
+      calendar.render();
+   }
+
+
+   function showSelectedDaysDoubleSecond() {
+      var otherHdn = jQuery('#' + firstCalendar.getHdnId());
+      var currentHdn = jQuery('#' + hdnId);
+      calendar.cfg.setProperty('selected', currentHdn.val() + ',' + otherHdn.val());
+      if (currentHdn.val() != '') {
+         calendar.cfg.setProperty('pagedate', new Date(currentHdn.val()));
+      }
+      else {
+         if (firstCalendar.hasEvents())
+            calendar.cfg.setProperty('pagedate', firstCalendar.getCalendar().pages[0].cfg.getProperty('pagedate'));
+      }
+      calendar.render();
+   }
+
+   return {
+      initCalendar: function () {
+         calendarMenu = new YAHOO.widget.Overlay('calendarmenu' + clientId);
+         hasEvents = false;
+
+         button = new YAHOO.widget.Button({ type: "menu", id: "calendarpicker1" + clientId, label: "", menu: calendarMenu, container: "divCalendar" + clientId, maxdate: "08/11/2009" });
+         button.on("click", buttonClick);
+
+         jQuery('#' + textId).change(function () { asignDate(); isVisible = false; });
+         jQuery('#' + textId).click(function () { clickText(200); });
+         jQuery(document).keyup(function (event) { if (event.keyCode == '9') { if (isVisible == true) { hideText(0); } } });
+         jQuery('#' + textId).focus(function () { clickText(200); isVisible = true; });
+         //jQuery('#' + textId).blur(function () { hideText(); });
+      },
+
+      getCalendar: function () {
+         return calendar;
+      },
+
+      getHdnId: function () {
+         return hdnId;
+      },
+
+      getTextId: function () {
+         return textId;
+      },
+
+      hasEvents: function () {
+         return hasEvents;
+      },
+
+      setSecondCalendar: function (sc) {
+         secondCalendar = sc;
+         isDoubleCalendar = true;
+      },
+
+      setFirstCalendar: function (fc) {
+         firstCalendar = fc;
+         isDoubleCalendar = true;
+      }
+
+   };
+}
+
+function getActionToFilterByName(ctx, sortOrderDefault, sortOrder, isAscDefault, isAsc, resultsUrl, filterAsParameter) {
+   var action = resultsUrl;
+   var hasFilters = window.selectedFilters && window.selectedFilters.join("/");
+
+   if (hasFilters && !filterAsParameter) {
+      var fUri = window.selectedFilters.join("/");
+      action += "/" + fUri;
+   }
+
+   var hasParameters = false;
+
+   if (YAHOO.util.Dom.get('HotelName').value != "") {
+      action += "?HotelName=" + escape(YAHOO.util.Dom.get('HotelName').value);
+      hasParameters = true;
+   }
+
+   if (sortOrderDefault != sortOrder) {
+      action += (hasParameters ? "&" : "?") + "SortField=" + sortOrder;
+      hasParameters = true;
+   }
+
+   if (isAscDefault != isAsc) {
+      action += (hasParameters ? "&" : "?") + "IsAscending=" + isAsc;
+      hasParameters = true;
+   }
+
+   if (hasFilters && filterAsParameter) {
+      action += (hasParameters ? "&" : "?") + "f=" + encodeURIComponent(window.selectedFilters.join("/"));
+      hasParameters = true;
+   }
+
+   if (hasFilters && !filterAsParameter && (ctx + "/" + action).length > 250) return getActionToFilterByName(ctx, sortOrderDefault, sortOrder, isAscDefault, isAsc, resultsUrl, true);
+   else return action;
+}
+
+function statsTrackVirtualPageview(uri) {
+   if (uri && uri.length > 0) {
+      if (typeof (pageTracker) == 'object') {
+         try { pageTracker._trackPageview(uri); } catch (e) {}
+      }
+      else if (typeof (_gaq) == 'object') {
+         try { _gaq.push(['_trackPageview', uri]); } catch (e) {}
+      }
+   }
+}
+
+function isValueEmpty(/* ids de elementos a verificar */) {
+   if (arguments.length == 0) return true;
+   for (i = 0; i < arguments.length; i++) {
+      if (arguments[i] && (arguments[i] instanceof Array)) {
+         if (isValueEmpty.apply(null, arguments[i]))
+            return true;
+      } else {
+         if (YAHOO.util.Dom.get(arguments[i]) && YAHOO.util.Dom.get(arguments[i]).value != '')
+            continue;
+         return true;
+      }
+   }
+   return false;
+}
+
+(function () {
+   var elementR;
+   var top = 0;
+   var left = 0;
+   var position;
+
+   window.SetScroller = function () {
+      elementR = jQuery('#right');
+      position = jQuery('.backlink:first').position();
+      top = position.top;
+      left = position.left + jQuery('.backlink:first').width() + 15;
+      elementR.css('position', 'fixed');
+      elementR.css('top', (jQuery(window).scrollTop() + top) + "px");
+      elementR.css('left', left + "px");
+      jQuery(window).scroll(function () {
+         if (elementR.height() + 70 > jQuery(this).height())
+            elementR.css('position', 'static');
+         else
+            elementR.css('position', 'fixed');
+      });
+      jQuery(window).resize(function () {
+         position = jQuery('.backlink:first').position();
+         top = position.top;
+         left = position.left + jQuery('.backlink:first').width() + 15;
+         elementR.css('left', left + "px");
+         if (elementR.height() + 70 > jQuery(this).height())
+            elementR.css('position', 'static');
+         else
+            elementR.css('position', 'fixed');
+      });
+      jQuery('.toggleNote').click(function () {
+         jQuery(this).next('div').toggle();
+      });
+      jQuery('.closeDiv').click(function () {
+         jQuery(this).parent().parent().toggle();
+      })
+   }
+})();

@@ -1,0 +1,397 @@
+/* Hoja de estilos compartida para itinerario de cliente en pantalla. Se carga tanto en afiliados como en PriceTravel
+Estos estilos de pantalla se heredan a la vista impresa porque la llamada de este archivo no contiene el atributo media="print"
+ */
+
+/* Globals y overrides */
+.itemData > .row {margin-left:0;}
+.itemImage {width:32px;}
+
+.slats h3 { margin: 0 0 .5em 0; color: #333333; }
+.slats > li { list-style-type: none; padding: 0 0 .5em 0; margin: 0 0 .5em 0; border-bottom: 1px solid #e6e6e6; }
+.slats > li:last-child { margin: 0; padding: 0; border-bottom: none; }
+.slats > li p { margin: 0 0 0 68px; }
+.slats img, .slats i { float: left; margin: 0 .5em 0 0; }
+.slats .glyphicons-icon { float: left; }
+.slats .circle-icon-wrap { float: left; margin: 0 1em 0 0; }
+.slats p { margin: 0 0 .5em 0; }
+.slats a :hover, .slats a :visited :hover, .slats h2 :hover, .slats h2 :visited :hover { text-decoration: none; }
+#privacyMessage{display: none;}
+
+
+/*Tabla de cargos*/
+/*Iconos para tabla de transacciones*/
+.icon-caret-down:before { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid #034ea2; content: " "; }
+.icon-plus-square:before { content: "+"; color: white; background: #0066cc; line-height: 12px; display: block; width: 12px; height: 12px; text-align: center; font-weight: normal; border-radius: 3px; }
+.icon-plus-square:before { content: "+"; color: white; background: #0066cc; line-height: 12px; display: block; padding: 2px 3px 1px 2px; text-align: center; font-weight: normal; border-radius: 3px; font-size: 12px; }
+.icon-minus-square:before { content: "-"; color: white; background: #0066cc; line-height: 12px; display: block; padding: 2px 6px 1px 6px; text-align: center; font-weight: normal; border-radius: 3px; font-size: 12px; }
+/*Tablas de cargos y pagos en tab de operaciones*/
+#resBody .opstabTable tr:hover td, .opstabTable tr.odd td .ovrl .list td { background: inherit; }/*Fix para estilos en master*/
+.opstabTable { width: 100%; font-size: 12px; }
+.opstabTable td, .opstabTable  th { padding: 5px; vertical-align: top; }
+.opstabTable  th { white-space: nowrap; }
+.opstabTable > tbody > tr.movementSingle .icon-caret-down { display: none; }
+.opstabTable > tbody > tr.movementParent:hover { cursor: pointer; background: #ffffee; }
+.opstabTable > tbody > tr.movementChild { background: rgba(207, 218, 226, 0.2); color: gray; display: none; }
+.opstabTable > tbody > tr.movementChild:hover { background: rgba(207, 218, 226, 0.35); }
+.opstabTable > tbody > tr.movementChild td { border-top: 1px dotted #D8D8D8; }
+.opstabTable.order-unordered > thead > tr { border-bottom: 1px solid #CECECE; }
+.opstabTable.order-unordered > tbody > tr:nth-of-type(even) { background: #f4f6f8; }
+.opstabTable.order-unordered > tbody > tr:hover { background: #ffffee; }
+.opstabTable.order-unordered > tbody > tr { border-top: 1px solid #efefef; }
+.opstabTable .movementChild .itemDescription { display: inline-block; margin-bottom: -5px; width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.opstabTable  > tbody > tr.movementTotal td { border-top: 2px solid #CECECE; font-weight: bold; font-size: 1.1em; }
+.opstabTable .movementNote { font-size: .9em; color: gray; }
+.opstabTable .movementNote.rejected { color: #660000; background: #ffecec; font-size: 1em; padding: 3px; border-radius: 3px; line-height: 1em; }
+.opstabTable .hour { font-size: .9em; color: gray; display: inline-block; white-space: nowrap;}
+.opstabTable .dateFormat { display: inline-block; margin-right: 5px; white-space: nowrap; }
+.opstabTable .itemSaldo { color: #025A02; }
+/*Tablas de cargos y pagos en tab de operaciones - estado colapsado y descolapsado*/
+.opstabTable tr.movementParent .icon-caret-down { color: #0066cc; font-size: 1.3em; display: flex; padding: 8px 1px; }
+.opstabTable th #showAll.rsv-icon, .opstabTable th #hideAll.rsv-icon { color: #0066cc; font-size: 1em; display: block; padding: 8px; }
+.opstabTable th .rsv-icon:hover { color: #ed1556; cursor: pointer; }
+.opstabTable tr.movementParent .icon-caret-down:before, .opstabTable #hideAll.icon-caret-down:before { transition-duration: .5s; -ms-transform: rotate(-90deg); /* IE 9 */ -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */ transform: rotate(-90deg); display: block; margin: auto; }
+.opstabTable tr.movementParent.uncollapsed .icon-caret-down:before, .opstabTable #showAll.icon-caret-down:before { -ms-transform: rotate(0deg); /* IE 9 */ -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */ transform: rotate(0deg); margin-top: 0px; }
+.opstabTable tr.movementParent.uncollapsed { font-weight: bold; }
+/*Tablas de cargos y pagos  SOLO para Tabla de CARGOS*/
+.opstabTable.charges > tbody > tr.movementParent, .opstabTable.charges > tbody > tr.movementSingle { border-top: 1px solid #CECECE; }
+.opstabTable.charges > tbody > tr > td.item-id, .opstabTable.charges > thead > tr > th.item-id { width: 60px; white-space: nowrap; }
+.opstabTable.charges > thead > tr > th.table-control, .opstabTable.charges > tbody > tr > td.row-control { width: 20px; white-space: nowrap; }
+.opstabTable.charges > tbody > tr > td.charge-price, .opstabTable.charges > tbody > tr > td.charge-cost, .opstabTable.charges > tbody > tr > td.charge-utility, .opstabTable.charges > tbody > tr > td.charge-utilityP { text-align: right; white-space: nowrap; }
+.opstabTable.charges > tbody > tr > td.charge-currency { width: 10px; }
+.opstabTable.charges > tbody > tr > td:first-of-type, .opstabTable.charges > thead > tr > th:first-of-type { text-align: center; padding: 0; }
+.opstabTable.charges > tbody > tr > td:last-of-type, .opstabTable.charges  > tbody > tr > th:last-of-type { width: 30px; }
+.opstabTable.opsPermissions td { padding: 6px; }
+/*Tablas de cargos y pagos en tab de operaciones- Tabla de pago ordenado*/
+.opstabTable.order-item > tbody > tr.movementParent > td.item-id, .opstabTable.order-item > tbody > tr.movementSingle > td.item-id, .opstabTable.order-item > tbody > tr.movementParent > td.item-icon, .opstabTable.order-item > tbody > tr.movementSingle > td.item-icon, .opstabTable.order-item > tbody > tr.movementParent > td.item-description, .opstabTable.order-item > tbody > tr.movementSingle > td.item-description { background: #F0F8FF; }
+.opstabTable.order-item > tbody > tr.movementChild > td.item-id, .opstabTable.order-item > tbody > tr.movementChild > td.item-icon, .opstabTable.order-item > tbody > tr.movementChild > td.item-description, .opstabTable.order-chargeType > tbody > tr.movementChild > td.charge-type { background: rgba(207, 218, 226, 0.23); }
+.opstabTable.order-date > tbody > tr.movementParent:hover > td.charge-date, .opstabTable.order-item > tbody > tr.movementParent:hover > td.item-id, .opstabTable.order-item > tbody > tr.movementParent:hover > td.item-icon, .opstabTable.order-item > tbody > tr.movementParent:hover > td.item-description, .opstabTable.order-chargeType > tbody > tr.movementParent:hover > td.charge-type { background: #F3F3E8 !important; }
+.opstabTable.order-date > tbody > tr.movementChild:hover > td.charge-date, .opstabTable.order-item > tbody > tr.movementChild:hover > td.item-id, .opstabTable.order-item > tbody > tr.movementChild:hover > td.item-icon, .opstabTable.order-item > tbody > tr.movementChild:hover > td.item-description { background: rgba(207, 218, 226, 0.5) !important; }
+
+/*Tabla de promociones aplicadas*/
+.itinerary-appliedPromos-title {color: #080;}
+.itinerary-appliedPromosTable { width: 100%; margin: 1em 0; }
+.itinerary-appliedPromosTable th,
+.itinerary-appliedPromosTable td { border-top: 1px solid #e0e0e0; padding: .25em .5em .25em .25em; }
+.itinerary-appliedPromosTable th { border-top: none; font-weight: bold; }
+.itinerary-appliedPromosTable tr:nth-child(even) td { background: #f6f6f6; }
+.itinerary-appliedPromosTable-promoDescription { color: #777; font-style: italic; }
+
+/* Boletos de autobus  */
+.cuponPax {padding:0 2% 0 0; width:28%;}
+.cuponOperador  {padding:0 0 0 2%; width:67%; border-left:1px dashed #c0c0c0;}
+.cuponPax th, .cuponOperador th { padding: .5em .5em .5em 0; text-align: right; line-height: 130%; color: #666; }
+.cuponPax td, .cuponOperador td  {padding:.5em 0; vertical-align:top; line-height:130%;}
+tr.big td, tr.big th {font-weight:bold;}
+.busTkt {padding:.5em 1em; border:1px solid #e0e0e0; border-bottom:1px solid #c0c0c0; margin:1em 0; -moz-box-shadow:1px 1px 3px #ccc;}
+.busTkt .fl:last-of-type {margin-left: 0;}
+
+.tktData {margin:.5em 0 0 0;}
+.provider img {display:block; margin:0 0 .25em 0;}
+.provLogo img {max-width: 100%;}
+#tktIda, #tktRegreso {margin:3em 0 .5em 0;}
+.cuponOperador p {margin:.25em 0;}
+.cuponOperador th {white-space:nowrap;}
+#empresa, #talonCliente {font-variant:small-caps; color:#999; text-transform:lowercase; text-align:center;}
+.barCode {padding: 1em;text-align: center;}
+.legalText {background: #f9f9f9; color: #777;  padding: .5em 1em; line-height:24px;}
+.legalText.compressed{line-height: 13px;}
+.legalText br{ line-height: 2em;}
+.legalText.compressed br{line-height: 18px;}
+.busTkt tr.big td {color:#000;}
+
+.busTkt {background:#fff;}
+#tktRight {vertical-align:top; padding:0; width:50%;}
+#tktRight ul {margin:1em 0 1em 2em ; color:#777; line-height:180%;}
+#tktRight li {margin:0 0 1em 0;}
+
+/* Cruceros */
+#itiStart { display: block; margin: 0 auto; position: relative; text-align: center; width: 100px;}
+#itiEnd {display: block; margin: 0 auto; position: relative; text-align: center; width: 60px;}
+.mark { background: none repeat scroll 0 0 #FFFFCC; box-shadow: 0 0 3px #CCCC9A;  color: #615D46; font-family: arial,sans-serif; padding: 0.25em;}
+#confMsg { position:absolute; top:125px; left:43%; width:20em; padding:.25em 1em .4em 1em; box-shadow:0 1px 2px #bdb384; text-align:center;
+	background: #f5e88b; /* Old browsers */
+background: -moz-linear-gradient(top,  #f5e88b 0%, #e9dc84 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5e88b), color-stop(100%,#e9dc84)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #f5e88b 0%,#e9dc84 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #f5e88b 0%,#e9dc84 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #f5e88b 0%,#e9dc84 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #f5e88b 0%,#e9dc84 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5e88b', endColorstr='#e9dc84',GradientType=0 ); /* IE6-9 */
+/* border:1px solid #bdb384; */
+border-radius:.25em;
+color:#59543e;
+text-shadow:0 1px 0 #fff;
+font-weight:bold;
+font-size:1.166666666666667em;
+	}
+.cSpecialTitle{font-size: 12px; font-weight: bold; color: #66A367;}
+.cSpecialTitle .pt-icon-discount:before{vertical-align: bottom; font-size: 2em;}
+
+
+#langSelector select {margin:0; padding:0; height:auto; border-radius:0;}
+#receipt, #xldPolicy {margin:1em;}
+#itineraryAlerts + .cajaErr {margin:0 1em 2em 1em;}
+
+ /*Agregados para descargar documentos de viajero*/
+.info h3 { color: #3A87AD; }
+
+/*-done-*/
+.done { width: 40px; height: 40px; display: block; float: right; margin-top: -30px; border-left: 1px solid #eee; padding: 5px; }
+.done img.fcy { width: 10px; height: 10px; margin-left: 12px; }
+.done span { font-size: 10px; color: #336600; }
+/* Para compensar el margen de los rows dentro de las tablas */
+
+/* Datos extra de facturaci�n primera plus */
+.divider {margin:1.5em 0; }
+
+/* Autos - voucher para Hertz International */
+.stats-tabs + .itemrate {clear:both;}
+
+/* Voucher Hertz */
+.printable-document { padding: 1em; margin: 2em 0; border: 1px solid #ddd; background: #f0f0f0; }
+.printable-document > h2 { margin-top: 0; }
+.printable-document .text-medium { font-size: 1.5em; margin: 0 0 .15em 0; font-weight: bold; }
+.printable-document .field-wrapper { background: #fff; margin-bottom: .5em; padding: .5em; box-sizing: border-box; }
+.printable-document .field-wrapper > h4 { margin: 0 0 .5em 0; }
+.printable-document .divider-line { background-color: transparent; border-top: 1px solid #ccc; margin: 1em 0 0 0; height: 0; }
+.text-monospace { font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif; }
+.vertical-text-wrap { min-height: 150px; }
+
+/* Senda Ticket */
+#senda-vertical-text-wrap { position: relative; height: 170px; }
+#senda-vertical-text { -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); -ms-transform: rotate(-90deg); -o-transform: rotate(-90deg); transform: rotate(-90deg); -webkit-transform-origin: 8% 40%; -moz-transform-origin: 8% 40%; -ms-transform-origin: 8% 40%; -o-transform-origin: 8% 40%; transform-origin: 8% 40%; width: 170px; position: absolute; bottom: 0; white-space: nowrap; }
+#senda-vertical-text ul { margin: 0; }
+#senda-vertical-text .span8 { margin-left: 0; }
+.top-dotted { border-top: 1px dashed #333; }
+.list.flush-table { width: 100%; }
+#senda-ticket h2 { margin: 0; }
+#ticket-header ul { margin: 0; padding: 0; border: none; background: none; box-shadow: none; }
+#ticket-header li { margin: 0 0 .5em 0; }
+#ticket-header .ticket-validator { max-width: 80px; height: 77px; }
+#ticket-header .span12 { height: 80px; }
+#ticket-header .folio { padding: 7px 4px; background: #fff; margin: 4px; }
+*[class*="bg"] { padding: .5em; }
+.bg-gray { background: #eeeeee; }
+#senda-ticket { width: 700px; margin: 20px auto; font-family: verdana, serif; padding: 1em .75em; position:relative; z-index:1; }
+#senda-ticket h3.senda-colors { margin: 30px 0 5px 0; }
+#senda-ticket .field-name { font-weight: bold; color: #5b5b5b; font-size: 11px; margin-bottom: 0; }
+#senda-ticket .text-medium, #senda-ticket .bg-gray { font-size: 14px; }
+#senda-ticket table.list { width: 240px; }
+#senda-ticket .slats li img { border: none; margin: -8px 0 0 0; padding: 0; }
+#senda-policy li {border:none; padding:0; margin:0;}
+#senda-ticket .slats ul { margin: .25em 0 .5em 48px; font-size: 11px; line-height: 130%; }
+#senda-ticket .slats ul + p { margin: 0 0 40px 20px; font-size: 11px; }
+#senda-ticket .has-watermark { margin: 0 auto; position: relative; }
+#senda-ticket .has-watermark [class*="span"]:first-of-type { margin-left: 0; }
+.has-watermark .span5 { margin: 0; }
+#senda-ticket .footer-watermark { width: 428px; }
+#senda-ticket .senda-colors { color: #ad2142; font-size: 12px; margin-bottom: 0; }
+#senda-ticket .textura-folio { position: absolute; left: 0; top: 0; max-width: 210px; z-index: -1; }
+.list.senda-rates th, .list.senda-rates td { padding: 0; background: none; border: none; }
+.list.senda-rates th.right { text-align: right; }
+#ticket-header h2 { color: #ad2142 !important; line-height: 120%; }
+#ticket-header .ticket-logo { padding-right: .5em; border-right: 1px solid #ddd; }
+.printable-document.transparent-voucher, #senda-ticket .field-wrapper { background: transparent; }
+.printable-document img {max-width: 100%;}
+.water-mark { position: absolute; z-index: -1; top: 25%; left: 0; -webkit-transform: translate(5%, -10%); transform: translate(5%, -10%); }
+.footer-watermark-image { position: absolute; z-index: -1; top: 45px; left: 0; -webkit-transform: translate(-15%, -10%); width: 110%; transform: translate(-20%, -10%); }
+.row-fluid table.list {margin: .5em 0;}
+.ticket-number ul { padding: 5px; border: 1px solid #ccc; width: 120px; box-sizing: border-box; }
+li.senda-colors {padding-top: 3px;}
+#extra-margin-bottom {margin: 0 0 26px 0;}
+#extra-margin-top-footer { margin-top: 15px; }
+#folio-header { z-index: 3; display: block; position: relative; }
+#sendaTicket-fondo-blanco-folio-header { position: absolute; left: 0; top: 0; }
+#sendaTicket-folio-header { z-index: 3; display: block; position: relative; }
+#sendaTicket-folio-header-wrapper { overflow: hidden; position: relative; }
+#sendaTicket-passenger-copy-watermark { overflow: hidden; position: relative; }
+#sendaTicket-footer-folio-wrapper { margin-left: 0; }
+#sendaTicket-copiaOperador { margin: 0 0 30px 0; text-transform: uppercase; }
+#sendaTicket-footer-qrimg { width: 50px; }
+#sendaTicket-footer-watermark-wrap { overflow: hidden; padding: 5px; }
+#sendaTicket-footer-watermark-wrap .textura-folio { position: absolute; left: 0; top: 0; max-width: 210px; z-index: -1; }
+#sendaTicket-footer-watermark-wrap .folio { overflow: hidden; position: relative; font-size: 11px; padding: 2px; }
+#sendaTicket-footer-watermark-wrap .folio img { position: absolute; left: 0; top: 0; z-index: 3; }
+#sendaTicket-footer-watermark-wrap .folio span { z-index: 4; display: block; position: relative; }
+
+/*Bolivariano Ticket*/
+.printable-document.busTkt.bolivariano {border:0; border-top: 1px dotted #e0e0e0; border-bottom: 1px dotted #e0e0e0;}
+#bolivarianoTicket{ margin: 0; padding: 0;}
+#bolivarianoTicket .row-fluid [class*="span"]{min-height: 10px;}
+#bolivarianoTicket .ticket { position:relative; overflow: hidden; font-size: 1em; line-height: 130%; width: 350px; margin-left: 10px; padding: 10px; vertical-align: top; padding-top: 30px; float: left; }
+#bolivarianoTicket .innerTicket{ z-index: 999;}
+#bolivarianoTicket .bgTicket{position: absolute; top: 0; right: 0; z-index: -10; overflow: hidden;}
+#bolivarianoTicket .bgTicket img{ width: 500px; height: auto;}
+#bolivarianoTicket .logoBoliva{width: 60px;}
+#bolivarianoTicket .txtcenter{text-align: center;}
+#bolivarianoTicket .txtSmall{font-size: .9em;}
+#bolivarianoTicket .txtCaps{text-transform: uppercase;}
+#bolivarianoTicket .borderBot{border-bottom: 1px solid black;}
+#bolivarianoTicket .borderBot [class*="span"]{padding: 8px 0;}
+#bolivarianoTicket .borderRig{border-right: 1px solid black}
+#bolivarianoTicket .txtBold{font-weight: bold;}
+#bolivarianoTicket .txtExtLarge{font-size: 3em; line-height: 1em;}
+#bolivarianoTicket .borderBotbold{border-bottom: 3px solid black;}
+#bolivarianoTicket .calltoAction{margin: .5em 0;}
+#bolivarianoTicket .txtBott{padding-top: 3em;}
+#bolivarianoTicket .condiciones{font-size: .9em; color: gray; width: 340px;float: right; margin-right: 10px;}
+#bolivarianoTicket .condiciones h4{margin: 1em 0;}
+#bolivarianoTicket .condiciones ol{line-height: 122%;}
+#bolivarianoTicket .condiciones ol li {margin-bottom: .5em;}
+
+#itinerary table {
+	table-layout: auto;
+}
+
+.itinerary-appliedPromosTable {
+	table-layout: fixed !important;
+}
+
+
+/*Módulo de atributos del vuelo*/
+.extra-info-module h4 { margin-top: 0px;}
+.extra-info-module ul {list-style-type: disc;}
+.brand-rate {font-size: 16px; font-weight: bold;}
+/*Interjet*/
+.brand-rate--interjet {
+	color: #1b4298;
+}
+/*Volaris*/
+.brand-rate--volaris {
+	color: #a42687;
+}
+/*Viva*/
+.brand-rate--viva {
+	color: #238323;
+}
+/*Aeromexico*/
+.brand-rate--aeromexico {
+	color: #094B8D;
+}
+
+
+/*Multiroom*/
+.bookingMultiroomDetails{
+    display: block;
+    clear: both;
+    position: relative;
+    font-size: 14px;
+    margin: .25em 0 0.5em 1.7em;}
+
+.bookingMultiroomDetails p{margin: .25em 0 .6em 0;}
+
+tr.roomData-roomCounter{
+    border-top: 2px solid #ecf0f1;
+}
+
+tr.roomData-roomCounter td{
+    padding: 3px;
+    padding-top: 9px;
+}
+tr.roomData-roomCounter p{
+  margin: .25em 0 0em 0;
+}
+
+/*Estatus de reservacion, pago asincrono*/ 
+
+.itinerarySubheader{
+  padding: 0 8px 8px 8px;
+}
+.itinerarySubheader:after{
+	clear: both;
+	display: table;
+	content: '';
+}
+.itinerarySubheader-item{
+	display: block;
+    float: left;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+.itinerarySubheader-item .higLitbig{
+    font-size:16px;
+}
+.highlight--warning{
+	color: #e67e22;
+}
+.ok{
+	border-color: #c2d4af;
+}
+.review{
+	background: #E8F3FF;
+	border: 1px solid #BFDDFF;
+	padding: 1em;
+	margin: 0 0 1em 0;
+	color: #2660A5;
+	border-radius: .25em;
+}
+.review h3{
+	color:#2660A5;
+}
+.review ul{
+	margin-bottom: 0.5em;
+}
+.small-box{
+	padding: 0.5em;
+	font-size: 12px;
+}
+.cajaErr{
+	color: #A03533;
+}
+
+.timeline{}
+.timeline-item{
+	width: 100%;
+	padding: 0 0 20px 20px;
+	box-sizing: border-box;
+	position: relative;
+	border-left: 8px solid #fff;
+}
+.timeline-item p{
+	margin:0;
+}
+.timeline-point{
+	width: 15px;
+	height: 15px;
+	background: #fff;
+	position: absolute;
+	top: -1px;
+    left: -12px;
+	border-radius: 50%;
+}
+.timeline--green{
+	border-left: 8px solid #b8e383;
+}  
+.timeline--green b, .timeline h4{
+	color: #080;
+	font-size: 14px;
+}
+.timeline--green .timeline-point{
+	background: #b8e383;
+}
+.timeline--yellow{
+	border-left: 8px solid #fdcc5c;
+}
+.timeline-point{
+	background: #fdcc5c;
+}
+.timeline--red{
+	border-left: 8px solid #fa8d7a;
+}
+.timeline--red .timeline-point{
+	background: #fa8d7a;
+}
+.timeline--red b{
+	color: #f7300c;
+	font-size: 14px;
+}
+.timeline--purple{
+	border-left: 8px solid #7967ae;
+}
+.timeline--purple .timeline-point{
+	background: #7967ae;
+}
+.timeline .no-border{
+	border-left: 8px solid #fff;
+}

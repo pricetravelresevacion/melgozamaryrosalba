@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://www.pricetravel.com.mx/ayuda/consultar-itinerario -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+      
+Consulta tu itinerario
+
+   </title>
+   
+
+      <meta name="Description" id="meta1" content="Consulta el estatus de tu reservación, imprime tu itinerario, solicita modificaciones o cancelaciones para los servicios de tu reservación.">
+   
+
+<style type="text/css">
+#frmReservation {margin-bottom:0;}
+#divReservationStatus {border:none;}
+#divReservationStatus table {border-collapse:collapse; border:1px solid #D1D0C0;margin:0;}
+#divReservationStatus table caption {margin:0 0 10px 0; padding:0; border:none; color:#444; font-size:115%;}
+#divReservationStatus tr.title th {padding:3px 6px;border-top:none;}
+#divReservationStatus .odd td {background:#f9f9f9;}
+#divReservationStatus tr.odd:hover td {background:#FFFBE4;}
+#divReservationStatus th {border:1px solid #D1D0C0; white-space:nowrap;}
+#divReservationStatus td.sign {padding-right:0;}
+#divReservationStatus td.curr {padding-left:0;}
+</style>
+<style type="text/css">
+   #main-login{width:600px; margin: 10px auto;}
+   .group, #Content{height: 1%;}
+   .group:after, #Content:after{clear:both; content:"."; display:block; height:0; visibility:hidden;}
+   
+   #login-form, #login-info{float:left; width:50%}
+   #login-form label{display:block;}
+   #login-form input[type="text"]{margin-bottom:1em; border: 1px solid #ccc; padding: 0.3em}
+   #login-form input[type="text"]:focus{border-color:#0066CC}
+   #login-form input[type="submit"]{display:block;}
+   #login{border:1px solid #CCC;}
+   
+</style>
+
+<script src="./Consulta tu itinerario_files/yahoo-dom-event.js.descarga" type="text/javascript">
+</script>
+<script type="text/javascript">
+
+   function switchView(id) {
+      if (YAHOO.util.Dom.get(id).style.display == 'none')
+         YAHOO.util.Dom.get(id).style.display = '';
+      else
+         YAHOO.util.Dom.get(id).style.display = 'none';
+   }
+
+   function switchDisablePrint(LinkId, DivId) {
+      hideHelpDivs(DivId);
+      var left = GetObjectPosition(YAHOO.util.Dom.get(LinkId))[0];
+      var top = GetObjectPosition(YAHOO.util.Dom.get(LinkId))[1];
+      if (YAHOO.util.Dom.get(DivId).style.top != (top + 15) + "px") {
+         YAHOO.util.Dom.get(DivId).style.left = (left - 325) + "px";
+         YAHOO.util.Dom.get(DivId).style.top = (top + 15) + "px";
+         YAHOO.util.Dom.get(DivId).style.display = '';
+      }
+      else {
+         switchView(DivId);
+      }
+   }
+
+   function monitorMouseMoveForElement(elem) {
+      var isMouseOver = false; _e(elem, "onmouseover", function (evt) { isMouseOver = true; }); _e(elem, "onmouseout", function (evt) { isMouseOver = contains(this, (evt = evt || window.event, evt.relatedTarget || evt.toElement)); });
+      function contains(cer, cee) { if (cer.contains) { return cer.contains(cee); } else if (typeof cee.parentNode != "undefined") { return (function (cr, ce) { return cr == ce || ce && ce.parentNode && arguments.callee(cr, ce.parentNode) || false; })(cer, cee); } else { return false; } } function _e(obj, evt, func) { if (obj[evt]) { obj[evt] = (function (x) { return function (evt) { func.call(this, evt); return x.call(this, evt); } })(obj[evt]); } else { obj[evt] = func; } } return function () { return isMouseOver; };
+   }
+
+   function showRejectedPaymentMessage(linkId, idLanguage) {
+      var tollFreeAR = 'Sin costo desde Argentina';
+      var tollFreeMX = 'Sin costo desde México';
+      var tollFreeUS = 'Sin costo desde EE. UU. y Canadá';
+      var restOfTheWorld = 'Desde otros países';
+      document.getElementById('phoneTitle1').innerHTML = (idLanguage == 1 ? tollFreeUS : idLanguage == 2 ? tollFreeMX : idLanguage == 3 ? tollFreeAR : '');
+      document.getElementById('phoneTitle2').innerHTML = (idLanguage == 1 ? tollFreeMX : idLanguage == 2 || idLanguage == 3 ? tollFreeUS : '');
+      document.getElementById('phoneTitle3').innerHTML = restOfTheWorld;
+      
+      var left = GetObjectPosition(document.getElementById(linkId))[0];
+      var top = GetObjectPosition(document.getElementById(linkId))[1];
+      document.getElementById('rejected_info').style.left = (left - 385) + "px";
+      document.getElementById('rejected_info').style.top = (top - 8) + "px";
+      document.getElementById('rejected_info').style.display = '';
+   }
+
+   function hidePopupRejectedInfo() {
+      setTimeout("if(!iRejectedInfoHide()){document.getElementById('rejected_info').style.display='none';}", 1000);
+   }
+
+   var divsHelp = new Array("divDisableCoupon", "divDisableReceipt");
+   function hideHelpDivs(DivHelpId) {
+      for (var i = 0; i < divsHelp.length; i++) {
+         if (divsHelp[i] != DivHelpId)
+            YAHOO.util.Dom.get(divsHelp[i]).style.display = 'none';
+      }
+   }
+</script>
+
+    
+   <link rel="SHORTCUT ICON" href="https://3.cdnpt.com/images/favicon3.ico">
+   <link href="./Consulta tu itinerario_files/master.css" rel="stylesheet" type="text/css">
+   <link href="./Consulta tu itinerario_files/bootstrap.css" rel="stylesheet" type="text/css">
+   <script type="text/javascript" src="./Consulta tu itinerario_files/globals.js.descarga"></script>
+   <script type="text/javascript" src="./Consulta tu itinerario_files/jquery-1.7.2.min.js.descarga"></script>  
+   <link href="./Consulta tu itinerario_files/header.css" type="text/css" rel="stylesheet" media="screen">
+   
+   <link href="./Consulta tu itinerario_files/spritespt.css" rel="stylesheet" type="text/css">    
+   
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+</head>
+<body>
+   
+<script type="text/javascript">
+   function hideSplash()
+   {
+      document.getElementById('splash').style.display = 'none';
+      document.getElementById('splashContent').style.display = '';
+   }
+   
+   function showSplash()
+   {
+      document.getElementById('splash').style.display='';
+      document.getElementById('splashContent').style.display='none';
+      setInterval("showDotsSplash()", 70);
+   }
+</script>
+
+<center>
+   <div id="splash" style="color: #3366AA; left: 0px; width: 100%; display:none">
+      <img style="margin: 0 0 70px 0;" src="./Consulta tu itinerario_files/logosplash2.gif" alt="PRICETRAVEL">
+      <h1>
+         Estamos procesando tu solicitud
+         <span id="dotsSplash" style="position: absolute; display:"></span>
+      </h1>
+      
+      <img id="aniSpl" style="display:none" src="./Consulta tu itinerario_files/splashv4.gif" alt="...">
+      <script type="text/javascript">
+         var iDot = 1
+         
+         function showDotsSplash()
+         {
+            if (iDot>7)
+            {
+               iDot = 0;
+               document.getElementById('dotsSplash').innerHTML = "";
+            }
+            
+            document.getElementById('dotsSplash').innerHTML = document.getElementById('dotsSplash').innerHTML + ".";
+            iDot+=1;
+         }
+      </script>
+      <h2>
+         998 881 4851
+      </h2>
+      <h4 class="higLit">
+         Llámanos sin costo desde México</h4>
+   </div>
+</center>
+
+
+   <div id="splashContent">
+      <div id="divRoomQuoted" style="position: absolute; display: none; left: 526px; z-index: 2;" onmouseout="javascript:hidePopup();"></div>
+      <div id="container2"> 
+      
+
+<div class="header-container">
+    <div class="header-row">
+        <div class="header-column header-logo">
+            <a href="https://www.pricetravel.com.mx/">
+                <svg class="pt-logo" xmlns:xlink="http://www.w3.org/1999/xlink" height="30px" version="1.1" viewBox="0 0 202 30" width="202px" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <polygon id="path-1" points="0.546432534 0.423404922 20.4499069 0.423404922 20.4499069 12.4444444 0.546432534 12.4444444"></polygon>
+                        <polygon id="path-3" points="0 0.625265723 11.8201447 0.625265723 11.8201447 20.550573 0 20.550573"></polygon>
+                    </defs>
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Image-/-Logotipo">
+                            <path d="M14.4377117,6.33697342 L7.51870238,0.526243898 C6.81442203,-0.175414632 5.67205106,-0.175414632 4.96777071,0.526243898 C4.26349035,1.22790242 4.26349035,2.36538164 4.96777071,3.06767921 L12.0593223,10.1334701 C13.3691042,11.4370979 15.499905,11.4370979 16.8103283,10.132831 L23.8890514,3.07982084 C24.2411916,2.72899158 24.4175824,2.26952666 24.4175824,1.8094227 C24.4175824,1.34931874 24.2411916,0.889853828 23.8890514,0.539024563 C23.1847711,-0.162633967 22.0430416,-0.162633967 21.3387612,0.539024563 L14.4377117,6.33697342 Z" id="Fill-1" fill="#4FC3F4"></path>
+                            <path d="M22.6695055,5.08333333 C22.7272198,5.02555556 22.7838242,4.96888889 22.835989,4.91666667 L22.6695055,5.08333333 Z" id="Fill-3" fill="#4E67F1"></path>
+                            <path d="M22.8476429,3.79388889 L22.9408736,3.70055556 C22.8198956,3.82166667 22.694478,3.94722222 22.5646209,4.07722222 L22.8476429,3.79388889 Z" id="Fill-5" fill="#4E67F1"></path>
+                            <path d="M22.9519725,4.80055556 L22.553522,5.19944444 C22.7111264,5.04166667 22.846533,4.90611111 22.9519725,4.80055556" id="Fill-7" fill="#4E67F1"></path>
+                            <path d="M22.6695055,3.97222222 C22.7272198,3.91444444 22.7838242,3.85777778 22.835989,3.80555556 L22.6695055,3.97222222 Z" id="Fill-9" fill="#4E67F1"></path>
+                            <path d="M23.957533,3.79388889 L24.0507637,3.70055556 C23.9297857,3.82166667 23.8043681,3.94722222 23.674511,4.07722222 L23.957533,3.79388889 Z" id="Fill-11" fill="#4E67F1"></path>
+                            <path d="M24.0618626,3.68944444 L23.6634121,4.08833333 C23.8210165,3.93055556 23.9564231,3.795 24.0618626,3.68944444" id="Fill-13" fill="#4E67F1"></path>
+                            <g id="Group-17" transform="translate(3.329670, 16.666667)">
+                                <g id="Fill-15-Clipped">
+                                    <mask id="mask-2" fill="white">
+                                        <use xlink:href="#path-1"></use>
+                                    </mask>
+                                    <g id="path-1"></g>
+                                    <path d="M10.4890636,5.58845432 L17.3822547,11.8749729 C18.083907,12.634084 19.2220153,12.6347753 19.9236677,11.8749729 C20.62532,11.1165531 20.62532,9.88524444 19.9236677,9.12544198 L12.858578,1.4810963 C11.5536836,0.0707259259 9.4308338,0.0707259259 8.12530033,1.48178766 L1.07299131,9.11230618 C0.722165134,9.49186173 0.546432534,9.98894814 0.546432534,10.4867259 C0.546432534,10.9845037 0.722165134,11.4815901 1.07299131,11.861837 C1.77464365,12.6202568 2.91211286,12.6202568 3.61376521,11.861837 L10.4890636,5.58845432 Z" id="Fill-15" fill="#FCB000" mask="url(#mask-2)"></path>
+                                </g>
+                            </g>
+                            <path d="M22.5163292,14.994748 L28.3285214,7.702299 C29.0303662,6.96010812 29.0335506,5.75362431 28.3368008,5.00668883 C27.6394142,4.26043114 26.5057629,4.25636434 25.8039181,4.99855523 L18.7402513,12.4692657 C17.4365523,13.8492662 17.4301834,16.1002397 18.725603,17.4890517 L25.7332241,24.9929742 C26.0822358,25.3657642 26.5395176,25.5535148 26.9980733,25.5555481 C27.4566288,25.5569038 27.9151844,25.3718644 28.2661068,25.0011079 C28.9673148,24.258917 28.971136,23.0524331 28.2743863,22.3054977 L22.5163292,14.994748 Z" id="Fill-18" fill="#5C469C"></path>
+                            <g id="Group-22" transform="translate(0.000000, 3.333333)">
+                                <g id="Fill-20-Clipped">
+                                    <mask id="mask-4" fill="white">
+                                        <use xlink:href="#path-3"></use>
+                                    </mask>
+                                    <g id="path-3"></g>
+                                    <path d="M6.75288589,10.5929158 L0.563028754,17.4757778 C-0.184420574,18.1762828 -0.188490171,19.3150033 0.554211294,20.0193468 C1.29691276,20.72433 2.50422655,20.7281683 3.25167589,20.0276633 L10.7743261,12.9765522 C12.162737,11.6740606 12.1695196,9.54887542 10.7899262,8.23806734 L3.32696343,1.15624916 C2.95527356,0.803757576 2.46827844,0.626552189 1.9799268,0.625272728 C1.49157515,0.623993266 1.0032235,0.798 0.62949884,1.14857239 C-0.117272222,1.84843771 -0.12134182,2.98779798 0.62068138,3.69214141 L6.75288589,10.5929158 Z" id="Fill-20" fill="#EA0074" mask="url(#mask-4)"></path>
+                                </g>
+                            </g>
+                            <path d="M73.2527473,9.63483146 L73.2527473,24.809613 C73.2527473,25.221598 73.5818995,25.5555556 73.9879564,25.5555556 L75.847205,25.5555556 C76.2538771,25.5555556 76.5836447,25.2203496 76.5824141,24.8083646 L76.5541132,9.63358302 C76.553498,9.22222222 76.224961,8.88888889 75.8189041,8.88888889 L73.9879564,8.88888889 C73.5818995,8.88888889 73.2527473,9.22284644 73.2527473,9.63483146" id="Fill-23" fill="#333132"></path>
+                            <path d="M109.53409,6.43263696 L115.82715,6.43263696 L115.82715,24.7792619 C115.82715,25.2078542 116.169731,25.5555556 116.592009,25.5555556 L118.671913,25.5555556 C119.094836,25.5555556 119.437416,25.2078542 119.437416,24.7792619 L119.437416,6.43263696 L125.762613,6.43263696 C126.184893,6.43263696 126.527473,6.08493567 126.527473,5.65634327 L126.527473,4.10962702 C126.527473,3.68038228 126.184893,3.33333333 125.762613,3.33333333 L109.53409,3.33333333 C109.111811,3.33333333 108.769231,3.68038228 108.769231,4.10962702 L108.769231,5.65634327 C108.769231,6.08493567 109.111811,6.43263696 109.53409,6.43263696" id="Fill-25" fill="#333132"></path>
+                            <path d="M193.106653,19.2900951 L193.106653,17.6974717 C193.109745,17.6994202 193.114075,17.7013688 193.117168,17.7039669 L193.078818,8.52364893 C193.07758,8.52364893 193.076344,8.52429846 193.075106,8.52429846 L193.075106,4.11730417 C193.075106,3.68407422 192.741088,3.33333333 192.328513,3.33333333 L190.538421,3.33333333 C190.125846,3.33333333 189.791209,3.68407422 189.791209,4.11730417 L189.791209,12.1245887 L189.791209,20.186433 C189.791209,22.0804338 190.391205,23.458066 191.592435,24.3160821 C192.016763,24.6200576 192.472636,24.8701228 192.959437,25.0656284 C193.558196,25.3104974 194.807673,25.470929 195.639008,25.552119 C196.076324,25.5949873 196.450549,25.231256 196.450549,24.7707462 L196.450549,23.0703024 C196.450549,22.6948798 196.196943,22.362975 195.844367,22.3025697 C194.020255,21.9914494 193.106653,21.1750027 193.106653,19.2900951" id="Fill-27" fill="#333132"></path>
+                            <path d="M67.0542293,8.88888889 L66.5087968,8.89388264 C65.4036111,8.90761548 64.3924439,9.07553059 63.4790313,9.41198502 C62.5687318,9.74032459 61.7536963,10.2322097 61.0351699,10.8813983 C59.5595134,12.210362 58.8241758,14.3614232 58.8241758,17.3370787 L58.8241758,24.8121099 C58.8241758,25.2228464 59.1560428,25.5555556 59.5651173,25.5555556 L61.4224519,25.5555556 C61.8315263,25.5555556 62.164016,25.2228464 62.164016,24.8121099 L62.164016,17.9575531 L62.164016,16.2640449 C62.2704874,14.8501872 62.6733353,13.789638 63.3725599,13.0811486 C63.7679361,12.6772784 64.2635575,12.3707866 64.8550653,12.1641698 C65.4783279,11.9419476 66.2130428,11.8320849 67.0542293,11.8258427 L67.0542293,11.8245942 L68.0722454,11.8245942 C68.4813198,11.8245942 68.8131868,11.4912609 68.8131868,11.0811486 L68.8131868,9.63171037 C68.8131868,9.221598 68.4813198,8.88888889 68.0722454,8.88888889 L67.0542293,8.88888889 Z" id="Fill-29" fill="#333132"></path>
+                            <path d="M92.1208791,11.0403927 L92.1208791,9.63143226 C92.1208791,9.22147344 91.7752066,8.88888889 91.3491149,8.88888889 L88.0603616,8.88888889 C85.6964284,8.88888889 83.7501557,9.55281002 82.2157068,10.8806523 C80.6780153,12.2091186 79.9120879,14.3593743 79.9120879,17.3339157 C79.9120879,20.223595 80.690986,22.3151961 82.2481339,23.6118391 C83.8033361,24.908482 85.7522029,25.5555556 88.0934372,25.5555556 C88.1569943,25.5555556 91.3069597,25.5530597 91.3069597,25.5530597 C91.7563989,25.5530597 92.1208791,25.2030034 92.1208791,24.7699571 L92.1208791,23.3691086 C92.1208791,22.9366862 91.7563989,22.5860061 91.3069597,22.5860061 L88.3314519,22.5697824 C86.6517298,22.5179916 85.401342,22.0949291 84.6146613,21.2693956 C83.7754488,20.3864553 83.3584368,18.9905986 83.3584368,17.0787054 C83.3584368,15.2516743 83.7877711,13.9188402 84.6496826,13.079579 C85.4700874,12.279005 86.7055587,11.8709181 88.3314519,11.8341029 L91.3069597,11.8234951 C91.7563989,11.8234951 92.1208791,11.472815 92.1208791,11.0403927" id="Fill-31" fill="#333132"></path>
+                            <path d="M133.647122,8.88888889 L133.101725,8.89388264 C131.996607,8.90761548 130.985504,9.07553059 130.072147,9.41198502 C129.162528,9.74032459 128.34692,10.2322097 127.628439,10.8813983 C126.152875,12.210362 125.417582,14.3614232 125.417582,17.3370787 L125.417582,24.8121099 C125.417582,25.2228464 125.749428,25.5555556 126.1591,25.5555556 L128.015696,25.5555556 C128.425368,25.5555556 128.757214,25.2228464 128.757214,24.8121099 L128.757214,17.9575531 L128.757214,16.2640449 C128.863679,14.8501872 129.266502,13.789638 129.965683,13.0811486 C130.361034,12.6772784 130.856626,12.3707866 131.448719,12.1641698 C132.071319,11.9419476 132.806611,11.8320849 133.647122,11.8258427 L133.647122,11.8245942 L134.665076,11.8245942 C135.074125,11.8245942 135.406593,11.4912609 135.406593,11.0811486 L135.406593,9.63171037 C135.406593,9.221598 135.074125,8.88888889 134.665076,8.88888889 L133.647122,8.88888889 Z" id="Fill-33" fill="#333132"></path>
+                            <path d="M142.54342,17.8574208 L147.501823,17.8450024 L147.501823,18.4541224 L147.501823,19.0756609 L147.501823,21.5282849 C147.501823,22.0995289 147.216061,22.4789096 146.642591,22.6701521 C146.06653,22.8613947 145.086772,22.9557741 143.697486,22.9557741 C142.682088,22.9557741 141.802769,22.7334857 141.065359,22.2901506 C140.325357,21.8474364 139.956651,21.1793292 139.956651,20.29328 C139.956651,19.4463486 140.282589,18.8123919 140.934465,18.3883052 C141.325202,18.1349709 141.839704,17.9667022 142.452053,17.8654927 M149.072546,10.1406585 C147.805081,9.30800818 146.266758,8.88888889 144.458223,8.88888889 L144.103774,8.88888889 L144.081743,8.88888889 L140.466618,8.88888889 C140.04089,8.88888889 139.695513,9.2198379 139.695513,9.62840159 L139.695513,10.9962828 C139.695513,11.4042256 140.04089,11.7351746 140.466618,11.7351746 L144.730378,11.7457301 C147.000928,11.9133779 147.501823,13.2471086 147.501823,15.2197634 L147.501823,15.2514302 L142.500652,15.2514302 L142.500652,15.2539139 C140.600103,15.260123 139.128523,15.6910398 138.087855,16.5516313 C137.039409,17.4178112 136.516484,18.7180124 136.516484,20.450993 C136.516484,22.2901506 137.1554,23.6021492 138.436471,24.3838843 C139.714304,25.1656193 141.33557,25.5555556 143.298325,25.5555556 C145.748367,25.5555556 147.635308,25.2749009 148.959149,24.7154542 C150.28234,24.1566286 150.944583,23.1569513 150.944583,21.7189066 L150.944583,14.184694 C150.964671,12.3238043 150.34325,10.9776553 149.072546,10.1406585" id="Fill-35" fill="#333132" fill-rule="nonzero"></path>
+                            <path d="M174.589881,15.4737461 C174.791967,14.0670681 175.235361,13.0688203 175.914078,12.4796197 C176.592796,11.8928868 177.53077,11.5992119 178.730658,11.5992119 C179.998351,11.5992119 180.959591,11.9095449 181.617702,12.5277428 C182.273153,13.1484087 182.679984,14.1293814 182.838197,15.4737461 L174.589881,15.4737461 Z M184.654315,11.2679022 C183.42119,9.68292161 181.480096,8.88888889 178.831701,8.88888889 C176.320911,8.88888889 174.375165,9.60826897 172.993798,11.0464121 C171.612431,12.4870232 170.923077,14.5600223 170.923077,17.2703454 C170.923077,19.9158872 171.653645,21.9605061 173.112789,23.3986492 C174.571933,24.8361754 176.580167,25.5555556 179.13749,25.5555556 L179.531026,25.5555556 L179.532356,25.5555556 L180.99017,25.5555556 L180.991499,25.5555556 L181.384372,25.5555556 C182.543045,25.5555556 183.586714,25.4043993 184.51937,25.1076397 C184.985365,24.9595683 185.2167,24.4740176 185.003314,24.0612687 L184.337227,22.7767496 C184.159735,22.4337174 183.736949,22.2739238 183.35006,22.3991676 C182.650735,22.6255933 181.817794,22.6842049 180.851901,22.6872897 L180.777447,22.6872897 C180.767476,22.6866728 180.757505,22.6854388 180.747533,22.6854388 L180.747533,22.6872897 L179.774328,22.6872897 L179.774328,22.6854388 C179.765021,22.6854388 179.75505,22.6866728 179.745078,22.6872897 L179.689239,22.6872897 C178.095814,22.682971 176.865348,22.2800934 175.999833,21.4768062 C175.126341,20.6685833 174.633756,19.4852463 174.522741,17.9317309 L185.64414,17.9317309 C186.098169,17.9317309 186.475752,17.5800613 186.461128,17.1586749 C186.377368,14.6710759 185.774432,12.7085133 184.654315,11.2679022 Z" id="Fill-37" fill="#333132" fill-rule="nonzero"></path>
+                            <path d="M96.8975766,15.4737461 C97.0996631,14.0670681 97.5430569,13.0688203 98.2217752,12.4796197 C98.9004936,11.8928868 99.8384677,11.5992119 101.038357,11.5992119 C102.305386,11.5992119 103.267292,11.9095449 103.925402,12.5277428 C104.580854,13.1484087 104.987686,14.1293814 105.145899,15.4737461 L96.8975766,15.4737461 Z M106.962019,11.2679022 C105.728892,9.68292161 103.787797,8.88888889 101.1394,8.88888889 C98.6286075,8.88888889 96.6821948,9.60826897 95.3014917,11.0464121 C93.9201236,12.4870232 93.2307692,14.5600223 93.2307692,17.2703454 C93.2307692,19.9158872 93.9613387,21.9605061 95.4204834,23.3986492 C96.8796281,24.8361754 98.8878632,25.5555556 101.445189,25.5555556 L101.838726,25.5555556 L101.83939,25.5555556 L103.29787,25.5555556 L103.298535,25.5555556 L103.692072,25.5555556 C104.871354,25.5555556 105.931643,25.3988467 106.876265,25.0915986 C107.332289,24.9435272 107.529058,24.4826551 107.319659,24.0779267 L106.632963,22.7545388 C106.456802,22.4145916 106.034016,22.2776256 105.65045,22.4016353 C104.953119,22.6255933 104.122171,22.6842049 103.158936,22.6872897 L103.084483,22.6872897 C103.074512,22.6866728 103.065205,22.6854388 103.055234,22.6854388 L103.055234,22.6872897 L102.082027,22.6872897 L102.082027,22.6854388 C102.072056,22.6854388 102.062749,22.6866728 102.052778,22.6872897 L101.996938,22.6872897 C100.403512,22.682971 99.1730445,22.2800934 98.3075291,21.4768062 C97.4340366,20.6685833 96.9414506,19.4852463 96.830436,17.9317309 L107.977105,17.9317309 C108.428476,17.9317309 108.782792,17.5812953 108.768832,17.1623767 C108.685737,14.6729268 108.082801,12.7097472 106.962019,11.2679022 Z" id="Fill-39" fill="#333132" fill-rule="nonzero"></path>
+                            <path d="M51.8222637,13.3775299 C51.170302,14.0996787 49.9726629,14.4610793 48.2299941,14.4610793 L44.6979953,14.4610793 L43.596919,14.4610793 L43.596919,6.43263696 L44.6979953,6.43263696 L48.2299941,6.43263696 C49.9726629,6.43263696 51.170302,6.79925632 51.8222637,7.53119037 C52.471633,8.26377677 52.7969658,9.25273578 52.7969658,10.4961104 C52.7969658,11.69643 52.471633,12.6573381 51.8222637,13.3775299 M54.553244,5.11554708 C53.1838655,3.92827438 51.2312209,3.33333333 48.6946626,3.33333333 L42.8088621,3.33333333 L40.744749,3.33333333 L40.7324356,3.33333333 C40.3040592,3.33333333 39.956044,3.68233932 39.956044,4.11419346 L39.956044,4.12593571 L39.956044,5.65177683 L39.956044,15.2419394 L39.956044,16.2700393 L39.956044,24.7740431 C39.956044,25.2058972 40.3040592,25.5555556 40.7324356,25.5555556 L42.8205274,25.5555556 C43.2489038,25.5555556 43.596919,25.2058972 43.596919,24.7740431 L43.596919,17.5936527 L48.6946626,17.5936527 C51.2085384,17.5936527 53.1559982,16.9654419 54.535746,15.7096727 C55.9148457,14.4558606 56.6043956,12.6729944 56.6043956,10.3636838 C56.6043956,8.05241613 55.9200304,6.30542917 54.553244,5.11554708" id="Fill-41" fill="#333132" fill-rule="nonzero"></path>
+                            <path d="M169.041979,8.88888889 L166.985033,8.88888889 C166.672512,8.88888889 166.391048,9.07116104 166.271993,9.34956304 L161.051659,21.602372 C161.030307,21.653558 160.981778,21.6785269 160.933897,21.6779027 C160.886017,21.6785269 160.838135,21.653558 160.816136,21.602372 L155.595802,9.34956304 C155.477393,9.07116104 155.195931,8.88888889 154.883409,8.88888889 L152.825816,8.88888889 C152.275184,8.88888889 151.902487,9.43008739 152.116011,9.92009988 L158.724249,25.0998751 C158.844599,25.3757802 159.124122,25.5555556 159.434701,25.5555556 L160.93325,25.5555556 L160.935191,25.5555556 L162.433741,25.5555556 C162.743673,25.5555556 163.023843,25.3757802 163.144192,25.0998751 L169.75243,9.92009988 C169.965307,9.43008739 169.592612,8.88888889 169.041979,8.88888889" id="Fill-43" fill="#333132"></path>
+                            <path d="M75.8442827,6.66666667 L73.9908821,6.66666667 C73.5833572,6.66666667 73.2527473,6.29144668 73.2527473,5.82893348 L73.2527473,4.17106652 C73.2527473,3.70855332 73.5833572,3.33333333 73.9908821,3.33333333 L75.8442827,3.33333333 C76.2518076,3.33333333 76.5824176,3.70855332 76.5824176,4.17106652 L76.5824176,5.82893348 C76.5824176,6.29144668 76.2518076,6.66666667 75.8442827,6.66666667" id="Fill-45" fill="#333132"></path>
+                            <path d="M201.088405,6.95639943 C200.837927,7.38557363 200.498336,7.72614024 200.069634,7.97629093 C199.640329,8.2270444 199.172489,8.35181837 198.665513,8.35181837 C198.164557,8.35181837 197.70033,8.2270444 197.271026,7.97629093 C196.84172,7.72614024 196.50213,7.38557363 196.252254,6.95639943 C196.001776,6.52662247 195.876538,6.06188467 195.876538,5.56037773 C195.876538,5.05284308 196.001776,4.58448864 196.252254,4.15471168 C196.50213,3.72553748 196.84172,3.38557363 197.271026,3.13482018 C197.70033,2.88466948 198.164557,2.75929274 198.665513,2.75929274 C199.172489,2.75929274 199.640329,2.88466948 200.069634,3.13482018 C200.498336,3.38557363 200.837927,3.72553748 201.088405,4.15471168 C201.338883,4.58448864 201.46352,5.05284308 201.46352,5.56037773 C201.46352,6.06188467 201.338883,6.52662247 201.088405,6.95639943 M201.551428,3.8864778 C201.252179,3.37592928 200.847561,2.97086599 200.337573,2.67128792 C199.826984,2.37231263 199.269429,2.22222222 198.665513,2.22222222 C198.067016,2.22222222 197.513074,2.37231263 197.003086,2.67128792 C196.492497,2.97086599 196.087878,3.37592928 195.789231,3.8864778 C195.489983,4.39702632 195.340659,4.95519389 195.340659,5.56037773 C195.340659,6.15953386 195.489983,6.71408479 195.789231,7.22463331 C196.087878,7.73578461 196.492497,8.1408479 197.003086,8.43982319 C197.513074,8.73940124 198.067016,8.88888889 198.665513,8.88888889 C199.269429,8.88888889 199.826984,8.73940124 200.337573,8.43982319 C200.847561,8.1408479 201.252179,7.73578461 201.551428,7.22463331 C201.850676,6.71408479 202,6.15953386 202,5.56037773 C202,4.95519389 201.850676,4.39702632 201.551428,3.8864778" id="Fill-47" fill="#333132" fill-rule="nonzero"></path>
+                            <path d="M200.3335,8.33111111 L200.33683,8.33555556 C200.33461,8.33444444 200.33461,8.33222222 200.3335,8.33111111" id="Fill-49" fill="#5C469C"></path>
+                            <path d="M200.340159,8.33222222 L200.33017,8.33222222 C200.33239,8.33222222 200.3335,8.33444444 200.33572,8.33444444 C200.33683,8.33444444 200.339049,8.33222222 200.340159,8.33222222" id="Fill-51" fill="#5C469C"></path>
+                            <path d="M199.284587,5.24230403 C199.179335,5.35528404 199.025411,5.41240876 198.821598,5.41240876 L198.121943,5.41240876 L198.121943,4.20961599 L198.821598,4.20961599 C199.025411,4.20961599 199.179335,4.266106 199.284587,4.379086 C199.38984,4.49206601 199.442162,4.63741669 199.442162,4.81577277 C199.442162,4.98714694 199.38984,5.12932402 199.284587,5.24230403 M200.258629,7.24230403 L200.256804,7.23976515 L199.451896,5.94620755 C199.669093,5.87765789 199.857696,5.74627103 200.018921,5.55077753 C200.179538,5.35528404 200.260454,5.08997144 200.260454,4.75420501 C200.260454,4.34988892 200.127216,4.03951127 199.860738,3.82434148 C199.594869,3.60790225 199.238349,3.5 198.791787,3.5 L197.613324,3.5 C197.442973,3.5 197.304259,3.64471596 197.304259,3.82307204 L197.304259,7.16423358 C197.30365,7.17185021 197.3,7.1781974 197.3,7.18581403 C197.3,7.19343066 197.30365,7.19914313 197.304259,7.20675976 C197.31521,7.36797842 197.438714,7.49492225 197.595072,7.49873056 C197.597506,7.49873056 197.598722,7.5 197.601156,7.5 C197.60359,7.5 197.605415,7.49873056 197.607848,7.49873056 L197.814095,7.49873056 C197.816528,7.49873056 197.818353,7.5 197.820787,7.5 C197.82322,7.5 197.825046,7.49873056 197.826871,7.49873056 C197.990529,7.49492225 198.121943,7.35718819 198.121943,7.18581403 L198.121943,7.18517931 L198.121943,6.08013329 L198.703569,6.08013329 L199.411742,7.33941606 C199.467106,7.43779752 199.568708,7.49873056 199.678219,7.49873056 L200.151551,7.49873056 L200.157027,7.49873056 C200.236118,7.4968264 200.3,7.43018089 200.3,7.34766741 C200.3,7.30641066 200.283573,7.26959695 200.258629,7.24230403" id="Fill-53" fill="#333132" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+        </div>
+        
+        <ul class="header-column desktop-shortcuts">
+            <li>
+                <a href="https://www.pricetravel.com/?loginOpen=open&amp;loginTimeout=0">Mi cuenta</a>
+            </li>
+            <li>
+                <a href="https://www.pricetravel.com.mx/ayuda/consultar-itinerario">Consultar reservación</a>
+            </li>
+        </ul>
+        <ul class="header-column mobile-shortcuts">
+            <li>
+                <a title="Iniciar sesión" href="https://www.pricetravel.com.mx/clientes">
+                    <svg width="24px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon id="pathLogin" points="0 0 24 0 24 24 0 24"></polygon>
+                            <path fill="#5C469C" d="M12,12 C14.21,12 16,10.21 16,8 C16,5.79 14.21,4 12,4 C9.79,4 8,5.79 8,8 C8,10.21 9.79,12 12,12 Z M12,14 C9.33,14 4,15.34 4,18 L4,19 C4,19.55 4.45,20 5,20 L19,20 C19.55,20 20,19.55 20,19 L20,18 C20,15.34 14.67,14 12,14 Z" id="Shape" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                </a>
+                <a class="help" title="Consultar reservación" href="https://www.pricetravel.com.mx/ayuda/consultar-itinerario">
+                    <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon id="pathHelp" points="0 0 24 0 24 24 0 24"></polygon>
+                            <path fill="#5C469C" d="M20,7 L16,7 L16,5 C16,3.89 15.11,3 14,3 L10,3 C8.89,3 8,3.89 8,5 L8,7 L4,7 C2.89,7 2.01,7.89 2.01,9 L2,20 C2,21.11 2.89,22 4,22 L20,22 C21.11,22 22,21.11 22,20 L22,9 C22,7.89 21.11,7 20,7 Z M14,7 L10,7 L10,5 L14,5 L14,7 Z" id="Shape" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <ul class="header-column tablet-booker">
+        </ul>
+    </div>
+        <img class="header-line" src="./Consulta tu itinerario_files/pt-line-header.png" alt="PRICETRAVEL - reserva tu viaje" "="">
+    </div>
+ 
+         <div id="Content"> 
+             
+<div id="breadcrumb-pt"><span class="breadcrumb-item home" title="PriceTravel - Viaja fácil, sin pretextos" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.pricetravel.com.mx/" itemprop="url"><span itemprop="title">Inicio</span></a></span><span class="breadcrumb-item home" title="Ayuda" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://www.pricetravel.com.mx/ayuda" itemprop="url"><span itemprop="title">Ayuda</span></a></span><span class="breadcrumb-item home" title="Consulta tu itinerario" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">Consulta tu itinerario</span> <meta itemprop="url" content="https://www.pricetravel.com.mx/ayuda/consultar-itinerario"> </span> </div>
+            
+
+   <div id="main-login">
+      
+      <form id="frm" method="post" action="https://www.pricetravel.com.mx/ayuda/iniciar-sesion">
+         <div id="login" class="group">
+            <div id="login-form">
+               <div style="padding:1em; border-right: 1px solid #CCC;">
+                 <h1>Consulta tu itinerario</h1>
+                  <p>
+                    <input type="hidden" name="doSearch" value="true">
+                    <label for="MasterLocator" class="smallv">Localizador:</label>
+                    <input type="text" name="MasterLocator" id="MasterLocator" size="35" value="">
+                    <label for="email" class="smallv">
+                      Tu email (el que usaste para reservar):
+                    </label>
+                    <input type="text" name="email" id="email" size="35" value="">
+                  </p>
+                  <p><a href="index.html"><img src="index_files/Sin título.png" width="103" height="33"></a> </p>
+               </div>
+            </div>
+            <div id="login-info">
+               <div style="padding:1em;">
+                  <h3>Al consultar tu itinerario podrás:</h3>
+                  <ul>
+                  <li>Consultar el estado de tu reservación.</li>
+<li>Imprimirlo.</li>
+<li>Solicitar cambios o cancelaciones.</li>
+                  
+                  <li>Obtener facturas.</li>
+                  
+                  </ul>
+
+               </div>
+            </div>
+         </div>
+      </form>
+   </div>
+   <div id="rejected_info" style="position:absolute; width:290px; display:none;" onmouseout="javascript:hidePopupRejectedInfo();">
+      <div id="wraPop" style="width:115px;">
+         <div id="tabPop">Mas información</div>
+      </div>
+      <div id="detPop" style="width:320px; margin-left:160px;">
+         <div style="background:#fff; padding:10px;">
+            <p style="margin-bottom:7px;">El cargo a tu tarjeta no se pudo completar, por favor llámanos para que uno de nuestros agentes le de seguimiento a tu reservación:</p>
+            <p></p><li><span id="phoneTitle1"></span><br><strong>998 881 4851</strong></li><li><span id="phoneTitle2"></span><br><strong>+52 998 881 4851</strong></li><li><span id="phoneTitle3"></span><br><strong>+52 (55) 8663 8825</strong></li>
+            <p></p>
+         </div>
+      </div>
+   </div>
+
+         </div>
+         <div class="clear"></div>
+         
+         
+<footer id="pt-footer" class="footer-wrapper">
+    <div class="footer-line-pt"></div>
+    <div class="footer-navigation">
+            <div class="footer-section-group footer-width">
+                <div class="footer-navigation-column">
+                    <div class="footer-navigation-group-title">
+                        Servicio al cliente
+                        <span class="ptw-icon-chevdown"></span>
+                    </div>
+                    <ul class="footer-list">
+                        <li><a class="footer-navigation-link" href="https://www.pricetravel.com.mx/ayuda">Ayuda</a></li>
+                        <li><a class="footer-navigation-link" href="https://www.pricetravel.com.mx/ayuda/factura-electronica">Facturación electrónica</a></li>
+                        <li><a class="footer-navigation-link" href="https://www.pricetravel.com.mx/ayuda/consultar-itinerario">Consultar reservación</a></li>
+                        <li><a class="footer-navigation-link" href="https://www.pricetravel.com.mx/ayuda/modificar-reservacion">Modificar reservación</a></li>
+                        <li><a class="footer-navigation-link" href="https://www.pricetravel.com.mx/ayuda/cancelar-reservacion">Cancelar reservación</a></li>
+                    </ul>
+                </div>
+                <div class="footer-navigation-column">
+                    <div class="footer-navigation-group-title">
+                        Acerca de PriceTravel
+                        <span class="ptw-icon-chevdown"></span>
+                    </div>
+                    <ul class="footer-list">
+                        <li><a class="footer-navigation-link" href="https://www.pricetravel.com.mx/info/acerca-nosotros">Nuestra historia</a></li>
+                        <li><a class="footer-navigation-link" href="http://www.pricetravelholding.com/comunicados/">Sala de prensa</a></li>
+                        <li><a class="footer-navigation-link" href="https://pricetravelholding-careers.com/">Carreras</a></li>
+                        <li><a class="footer-navigation-link" href="http://revista.pricetravel.com.mx/">Revista Pricetravel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-navigation-column">
+                    <div class="footer-navigation-group-title">
+                        Proveedores
+                        <span class="ptw-icon-chevdown"></span>
+                    </div>
+                    <ul class="footer-list">
+                        <li><a class="footer-navigation-link" href="https://join.pricetravel.com/">Registrar hotel</a></li>
+                        <li><a class="footer-navigation-link" href="https://www.travelinn.com.mx/">Agencias de viajes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-navigation-column">
+                    <div class="footer-navigation-group-title">
+                        Contáctanos
+                        <span class="ptw-icon-chevdown"></span>
+                    </div>
+                    <ul class="footer-list">
+                        <li><span class="footer-country-title">México </span>998 881 4851</li>
+                        <li><span class="footer-country-title">Colombia </span>(1) 7442074</li>
+                        <li><span class="footer-country-title">EEUU / Canadá </span>+52 998 881 4851</li>
+                        <li><span class="footer-country-title">Resto del mundo </span>+52 (55) 8663 8825</li>
+                        <li><a class="footer-navigation-link" href="mailto:contact@pricetravel.com.mx">contact@pricetravel.com.mx</a></li>
+                        <li class="footer-social-media">
+                            <a title="PriceTravel en Facebook" href="https://www.pricetravel.com.mx/ayuda/consultar-itinerario" rel="nofollow" class="footerSection__socialLinkIcon">
+                                <span class="ptw-icon-facebook-sq footer-icon-social-link"></span>
+                            </a>
+                            <a title="PriceTravel en Twitter" href="https://www.pricetravel.com.mx/ayuda/consultar-itinerario" rel="nofollow" class="footerSection__socialLinkIcon">
+                                <span class="ptw-icon-twitter footer-icon-social-link"></span>
+                            </a>
+                            <a title="PriceTravel en Instagram" href="https://www.instagram.com/pricetravel/" rel="nofollow" class="footerSection__socialLinkIcon">
+                                <span class="ptw-icon-instagram footer-icon-social-link"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        <div class="footer-site-legal">
+            <div class="footer-site-legal-title">
+                © Price Res, SAPI de CV Todos los derechos reservados. All rights reserved.
+                <a class="footer-navigation-link" href="https://www.pricetravel.com.mx/info/politicas-reservacion?completePage=true">Términos y condiciones</a>
+                <a class="footer-navigation-link" href="https://www.pricetravel.com.mx/info/aviso-privacidad">Aviso de privacidad</a>
+            </div>
+        </div>
+    </div>
+</footer>
+         
+      </div> 
+      <div id="Footer1_statisticsContainer"></div>
+
+      
+
+<div class="button-floating">
+    <a href="https://wa.me/525579693165" rel="noreferrer" target="_blank">
+        <img src="./Consulta tu itinerario_files/whatsapp-circle.png" alt="">
+    </a>
+</div>
+   </div>
+
+   <script type="text/javascript">
+      function setCookie(name, value, days){ var expires = ""; var date = null; if(days){ date = new Date(); date.setTime(date.getTime()+(days*24*60*60*1000)); expires = "; expires="+date.toGMTString(); } document.cookie = name+"="+value+expires+"; path=/"; }
+      function changeLanguage(){ var preLan = "2"; switch(preLan){ case "1": preLan = "2"; break; case "2": preLan = "1"; break; default: preLan = "0"; break; } setCookie("preLan", preLan, 7); }
+      function movebglogo(id, pos){ document.getElementById(id).style.backgroundPosition = pos; }
+      function monitorMouseMoveForElement(elem) {var isMouseOver = false; _e(elem, "onmouseover", function (evt) { isMouseOver = true; }); _e(elem, "onmouseout", function (evt) { isMouseOver = contains(this, (evt = evt || window.event, evt.relatedTarget || evt.toElement)); }); function contains(cer, cee) { if (cer.contains) { return cer.contains(cee); } else if (typeof cee.parentNode != "undefined") { return (function (cr, ce) { return cr == ce || ce && ce.parentNode && arguments.callee(cr, ce.parentNode) || false; })(cer, cee); } else { return false; } } function _e(obj, evt, func) { if (obj[evt]) { obj[evt] = (function (x) { return function (evt) { func.call(this, evt); return x.call(this, evt); } })(obj[evt]); } else { obj[evt] = func; } } return function () { return isMouseOver; };}
+      function navigate(url) { var form = document.createElement("form"); form.name = "linkForm"; form.action = url; form.method = "post"; hdn = document.createElement("input"); hdn.setAttribute("type", "hidden"); hdn.setAttribute("id", "ReturnUrl"); hdn.setAttribute("name", "ReturnUrl"); hdn.setAttribute("value", document.location.href); form.appendChild(hdn); document.body.appendChild(form); form.submit(); }
+   </script>
+   
+<script type="text/javascript">
+   document.getElementById("MasterLocator").focus();
+    var iRejectedInfoHide = monitorMouseMoveForElement(document.getElementById('rejected_info'));
+</script>    
+
+   <script type="text/javascript" src="./Consulta tu itinerario_files/PT.Scripts.Header-min.js.descarga"></script>
+   <script type="text/javascript">
+      var headerScripts = PT.General.Header({
+         isCustomerLoginEnabled: true,
+         customerSiteUrl: 'https://www.pricetravel.com.mx/clientes?fromPriceTravel=true',
+         customerUriLogout: 'https://www.pricetravel.com.mx/clientes/logout',
+         customerUriCreateUser: 'https://www.pricetravel.com.mx/clientes/crear',
+         reloadLogout: false,
+         localSecureUrl: 'https://www.pricetravel.com.mx'
+      });
+      headerScripts.init();
+   </script>  
+   
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Consulta tu itinerario_files/ga.js.descarga" type="text/javascript"></script>
+    <script type="text/javascript">
+     try {
+         var pageTracker = _gat._getTracker("UA-3153734-1");
+         pageTracker._trackPageview();
+     } catch (err) { }</script>
+
+   
+
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body></html>
